@@ -1,0 +1,23 @@
+body{
+    font : url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+}
+.navbar{
+    border-bottom: 2px solid black;
+}
+.nav-item{
+    margin-left: 5em;
+}
+.navbar-brand{
+    margin-left: 2em;
+    font-weight: 5em;
+}
+.btn-outline-success{
+ margin-left: 1em;
+}
+.input-search{
+    border-radius: 10px;
+}
+.fa-solid{
+    color: black;
+    margin-right: 2em;
+}
