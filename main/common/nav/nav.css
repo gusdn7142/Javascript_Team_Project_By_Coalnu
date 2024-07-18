@@ -1,0 +1,7 @@
+.navbar-nav{
+    display: flex;
+    justify-content: center;
+}
+.nav-item{
+    margin-left: 65px;
+}
