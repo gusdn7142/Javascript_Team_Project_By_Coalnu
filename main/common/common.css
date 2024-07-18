@@ -1,4 +1,4 @@
-@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
 *,
 *::before,
@@ -11,7 +11,7 @@
 body { 
 	font-size: 18px;
 	color: #111111;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-family: 'Newsreader', 'sans-serif';
 }
 
 ul,li,ol {
@@ -69,19 +69,19 @@ a {
 }
 
 .custom-text-darkGrey {
-  color:#585858
+  color:#585858;
 }
 
 .custom-text-grey {
-  color:#999999
+  color:#999999;
 }
 
 .custom-text-lightGray {
-  color:#E0E0E0
+  color:#E0E0E0;
 }
 
 .custom-text-white {
-  color:#FFFFFF
+  color:#FFFFFF;
 }
 
 .custom-bgColor-white {
