@@ -3,14 +3,17 @@
     border-radius: 30px;
     margin-right: 10px;
 }
+
 .button-info{
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .btn-dark:hover{
     background-color: #000;
 }
+
 .btn-light:hover{
     background-color: white;
     border-color: #000;

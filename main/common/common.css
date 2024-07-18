@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 *,
 *::before,
@@ -11,7 +11,7 @@
 body { 
 	font-size: 18px;
 	color: #111111;
-  font-family: 'Newsreader', 'sans-serif';
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif' !important;
 }
 
 ul,li,ol {
