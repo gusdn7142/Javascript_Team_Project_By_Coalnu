@@ -1,3 +1,20 @@
+//nav.html, footer.html 들고오는 함수
+document.addEventListener("DOMContentLoaded", function () {
+    function loadHTML(elementId, url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading HTML:', error);
+            });
+    }
+
+    loadHTML('nav', '../common/nav/nav.html');
+    loadHTML('footer', '../common/footer/footer.html');
+});
+
 async function getBookInfo() {
 
     const apiKey = "76faa9053c59326364cd62f1f1375e2d77db3e92ae9879832c4d569414929619";
