@@ -1,7 +1,7 @@
 async function getBookInfo(keyword) {
-    const apiKey = "76faa9053c59326364cd62f1f1375e2d77db3e92ae9879832c4d569414929619";
-    const url = `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=10&pageNum=1&sort=&category=도서`;
-  
+    const apikey = config.apikey;
+    const url = `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=10&pageNum=1&sort=&category=도서`;
+  console.log(apikey);
     try {
       const response = await fetch(url);
       const result = await response.json();
