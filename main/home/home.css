@@ -1,3 +1,13 @@
+.main-container{
+    width: 1140px;
+    margin: auto; 
+}
+
+.main-top-carousel{
+    width: 800px;
+    margin: auto;
+}
+
 .btn{
     border-color: black;
     border-radius: 30px;
@@ -17,4 +27,8 @@
 .btn-light:hover{
     background-color: white;
     border-color: #000;
+}
+
+body{
+    height: 2200px;
 }
