@@ -1,11 +1,6 @@
-.main-container{
-    width: 1140px;
-    margin: auto; 
-}
-
-.main-top-carousel{
+.main-carousel-container {
     width: 800px;
-    margin: auto;
+    margin: auto; 
 }
 
 .btn{
@@ -33,10 +28,14 @@ body {
     height: 2200px;
 }
 
+.main-top-carousel-img {
+    border: none;
+}
+
 .main-top-carousel-text {
     position: absolute;
     top: 220px;
-    left: 250px;    
+    left: 100px;    
 }
 
 .main-top-carousel-button {
@@ -51,44 +50,71 @@ body {
     width: 152px;
     height: 48px;
     border-radius: 20px;
-    margin-top: 60px;
 }
 
-.main-top-carousel-shareButton-icon{
+.main-top-carousel-shareButton-icon {
     color: #FFFFFF;
     padding-left: 8px;
 }
 
-.hidden-pad {
+.show-pad {
     display: none;
 }
 
-.hidden-phone {
+.show-phone {
     display: none;
 }
 
-@media screen and (max-width:1023px) { 
-    .hidden-pad {
-        display: block;
+@media screen and (max-width: 1023px) { 
+    .main-carousel-container {
+        width: 600px;
+        margin: auto; 
     }
 
-    .hidden-web {
+    .main-top-carousel-text {
+        text-align: center;
+        top: 300px;
+        left: 156px;        
+    }
+    
+    .show-pad {
+        display: block;
+        width: 600px;
+    }
+
+    .show-web {
         display: none;
     }
 
 }
 
-@media screen and (max-width:767px) { 
-    .hidden-phone {
+@media screen and (max-width: 767px) { 
+    .main-carousel-container {
+        width: 360px;
+        margin: auto; 
+    }
+
+    .main-top-carousel-text {
+        text-align: center;
+        top: 280px;
+        left: 42px;      
+    }
+    
+    .show-phone {
         display: block;
+        width: 360px;
     }
 
-    .hidden-pad {
+    .show-pad {
         display: none;
     }
 
-    .hidden-web {
+    .show-web {
         display: none;
+    }
+
+    .responsive-fs {
+        font-size: 20px;
     }
 
 }
