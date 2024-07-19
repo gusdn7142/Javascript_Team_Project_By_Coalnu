@@ -1,0 +1,20 @@
+.main-bottom-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.main-bottom-pagination-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .main-bottom-pagination-link {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+}

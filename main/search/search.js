@@ -4,7 +4,9 @@ async function getBookInfo(keyword) {
   console.log(apikey);
     try {
       const response = await fetch(url);
+      console.log(response);
       const result = await response.json();
+      console.log(result);
       return result;
     } catch (error) {
       console.error("ERROR : ", error);

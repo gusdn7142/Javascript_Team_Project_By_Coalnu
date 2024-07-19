@@ -1,8 +1,5 @@
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  /**min-width: 1400px;**/
   padding: 100px 150px;
   background-color: white;
   border-top: 1px solid #e0e0e0;
