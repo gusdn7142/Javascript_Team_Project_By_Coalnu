@@ -5,9 +5,9 @@ async function getBookInfo(keyword) {
 console.log(apikey);
   try {
     const response = await fetch(url);
-    const result = await response.json();
-    console.log("API Response:", result);
-    return result;
+    const resultSearch  = await response.json();
+    console.log("API Response:", resultSearch );
+    return resultSearch ;
   } catch (error) {
     console.error("ERROR : ", error);
     return null;
@@ -21,12 +21,12 @@ function extractAuthorName(authorInfo) {
   return name.length > 20 ? name.substring(0, 20) + "..." : name;
 }
 
-
+//searchBooksResult
 
 async function searchBooks() {
   const searchInput = document.getElementById('search-input').value;
-  const data = await getBookInfo(searchInput);
-  const books = data?.result || [];
+  const resultSearch = await getBookInfo(searchInput);
+  const books = resultSearch?.result || [];
 
   const bookListDiv = document.getElementById('book-list');
   bookListDiv.innerHTML = ''; // 기존 리스트 초기화
@@ -50,24 +50,11 @@ async function searchBooks() {
     `;
     bookListDiv.appendChild(bookDiv);
   });
-  updatePagination(data.totalPages, pageNum);
+
 }
 
 
-function updatePagination(totalPages, currentPage) {
-  const paginationDiv = document.getElementById('pagination');
-  paginationDiv.innerHTML = ''; // 기존 페이지네이션 초기화
 
-  for (let i = 1; i <= totalPages; i++) {
-    const pageButton = document.createElement('button');
-    pageButton.textContent = i;
-    pageButton.onclick = () => searchBooks(i);
-    if (i === currentPage) {
-      pageButton.style.fontWeight = 'bold';
-    }
-    paginationDiv.appendChild(pageButton);
-  }
-}
 
         // <p>출판 정보: ${book.pubInfo}</p>
         // <h3>제목: ${book.titleInfo}</h3>
