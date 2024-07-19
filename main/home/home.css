@@ -58,3 +58,37 @@ body {
     color: #FFFFFF;
     padding-left: 8px;
 }
+
+.hidden-pad {
+    display: none;
+}
+
+.hidden-phone {
+    display: none;
+}
+
+@media screen and (max-width:1023px) { 
+    .hidden-pad {
+        display: block;
+    }
+
+    .hidden-web {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:767px) { 
+    .hidden-phone {
+        display: block;
+    }
+
+    .hidden-pad {
+        display: none;
+    }
+
+    .hidden-web {
+        display: none;
+    }
+
+}
