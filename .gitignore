@@ -1,3 +1,1 @@
-$ echo "apikey.js" >> .gitignore
-$ cat .gitignore
-C:\Users\ghkor\Documents\noonaProject\js-noona-lastproject\geonhee\apikey.js
+/main/common/apikey.js
