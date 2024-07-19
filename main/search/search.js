@@ -40,13 +40,9 @@ async function searchBooks() {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book-item', `search_book${index + 1}`);
     bookDiv.innerHTML = `
-  
       <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
       <p>제목: ${book.titleInfo}</p>
       <p>저자: ${extractAuthorName(book.authorInfo)}</p>
-     
-      
-  
     `;
     bookListDiv.appendChild(bookDiv);
   });

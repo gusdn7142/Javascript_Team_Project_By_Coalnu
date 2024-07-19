@@ -76,14 +76,3 @@ top:130px;
   text-decoration: underline;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.pagination button {
-  padding: 10px;
-  margin: 0 5px;
-  cursor: pointer;
-}
