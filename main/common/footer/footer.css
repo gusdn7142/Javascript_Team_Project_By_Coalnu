@@ -2,7 +2,6 @@ footer{
     position: absolute;
     bottom: 0;  
     width:100%;
-    min-width: 1400px;
     padding: 100px 150px;
     background-color: white;
     border-top: 1px solid #e0e0e0;
@@ -30,4 +29,39 @@ footer{
     margin-top: 20px;
     color: #999;
     font-size: small;
+  }
+
+  @media (max-width : 1023px) {
+      .footer-top{
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer-top-rightBox{
+        display: none;
+      }
+      .footer-top-leftBox-brand{
+        display: flex;
+        justify-content: center;
+      }
+      
+      .footer-bottom{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .footer-bottom-words{
+        display: flex;
+        justify-content: center;
+        
+      }
+      
+  }
+
+  @media (max-width:767px){
+    footer{
+      padding: 100px 50px;
+    }
+      
   }
