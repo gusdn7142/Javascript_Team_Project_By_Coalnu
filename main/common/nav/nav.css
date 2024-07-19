@@ -26,8 +26,18 @@ nav{
     font-size: 20px;
 }
 
+.hamberger-menus{
+    display: none;
+}
+
 @media(max-width : 1023px) {
     .nav-link{
         display: none;
+    }
+    .hamberger-menus{
+        display: contents;
+    }
+    .search-icon-button{
+        margin-right: 25px;
     }
 }
