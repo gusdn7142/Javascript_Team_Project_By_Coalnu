@@ -9,6 +9,31 @@
     align-items: center;
 }
 
+.main-bottom-pagination-link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.main-bottom-pagination-link.active .main-bottom-pagination-num {
+    background-color: #8B0000;
+    color: #FFFFFF;
+}
+
+.main-bottom-pagination-num {
+    background-color: #F6E7E0;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+}
+
+.main-bottom-pagination-num:hover {
+    background-color: #8B0000;
+    color: #FFFFFF;
+}
+
 
 .search-main{
   display: flex;
@@ -58,12 +83,9 @@ top:130px;
 
 }
 
-.book-item img {
-  justify-content: space-between; 
+img {
   width: 180px;
   height: 266px;
-  
-  
 }
 
 .book-item h3 {
