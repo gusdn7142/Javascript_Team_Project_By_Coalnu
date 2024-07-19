@@ -1,7 +1,7 @@
 async function getBookInfo(keyword) {
   const apikey = config.apikey;
   const url = 
-  `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=15&pageNum=1&sort=`;
+  `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=15&pageNum=1&sort=ititle,iauthor&total=`;
 console.log(apikey);
   try {
     const response = await fetch(url);
@@ -14,6 +14,7 @@ console.log(apikey);
   }
 }
 
+//저자 이름만 출력
 function extractAuthorName(authorInfo) {
   // 예: "홍길동 저"에서 "홍길동"만 추출
   const nameMatch = authorInfo.match(/^[^\s]+/);
@@ -21,8 +22,8 @@ function extractAuthorName(authorInfo) {
   return name.length > 20 ? name.substring(0, 20) + "..." : name;
 }
 
-//searchBooksResult
 
+//검색했을때 나오는 결과
 async function searchBooks() {
   const searchInput = document.getElementById('search-input').value;
   const resultSearch = await getBookInfo(searchInput);
@@ -36,6 +37,7 @@ async function searchBooks() {
     return;
   }
 
+  //검색시 출력 리스트 및 이미지 사진 없을때 나오는 이미지
   books.forEach((book, index) => {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book-item', `search_book${index + 1}`);
