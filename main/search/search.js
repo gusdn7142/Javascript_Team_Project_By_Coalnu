@@ -1,44 +1,62 @@
 async function getBookInfo(keyword) {
-    const apikey = config.apikey;
-    const url = `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=10&pageNum=1&sort=&category=도서`;
+  const apikey = config.apikey;
+  const url = 
+  `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=15&pageNum=1&sort=ititle,iauthor&total=`;
   console.log(apikey);
-    try {
-      const response = await fetch(url);
-      console.log(response);
-      const result = await response.json();
-      console.log(result);
-      return result;
-    } catch (error) {
-      console.error("ERROR : ", error);
-      return null;
-    }
+  try {
+    const response = await fetch(url);
+    const resultSearch  = await response.json();
+    console.log("API Response:", resultSearch );
+    return resultSearch ;
+  } catch (error) {
+    console.error("ERROR : ", error);
+    return null;
   }
-  
-  async function searchBooks() {
-    const searchInput = document.getElementById('search-input').value;
-    const data = await getBookInfo(searchInput);
-    const books = data?.result || [];
-  
-    const bookListDiv = document.getElementById('book-list');
-    bookListDiv.innerHTML = ''; // 기존 리스트 초기화
-  
-    if (books.length === 0) {
-      bookListDiv.innerHTML = '<p>검색 결과가 없습니다.</p>';
-      return;
-    }
-  
-    books.forEach(book => {
-      const bookDiv = document.createElement('div');
-      bookDiv.innerHTML = `
-        <h3>제목: ${book.titleInfo}</h3>
-        <p>상세 링크: <a href="${book.detailLink}" target="_blank">여기</a></p>
-        ${book.imageUrl ? `<img src="http://cover.nl.go.kr/${book.imageUrl}" alt="${book.titleInfo}">` : ''}
-        <p>저자: ${book.authorInfo}</p>
-        <p>출판 정보: ${book.pubInfo}</p>
-        <p>유형: ${book.typeName}</p>
-        <p>분류: ${book.kdcName1s}</p>
-        <hr>
-      `;
-      bookListDiv.appendChild(bookDiv);
-    });
+}
+
+//저자 이름만 출력
+function extractAuthorName(authorInfo) {
+  // 예: "홍길동 저"에서 "홍길동"만 추출
+  const nameMatch = authorInfo.match(/^[^\s]+/);
+  const name = nameMatch ? nameMatch[0] : authorInfo;
+  return name.length > 20 ? name.substring(0, 20) + "..." : name;
+}
+
+
+//검색했을때 나오는 결과
+async function searchBooks() {
+  const searchInput = document.getElementById('search-input').value;
+  const resultSearch = await getBookInfo(searchInput);
+  const books = resultSearch?.result || [];
+
+  const bookListDiv = document.getElementById('book-list');
+  bookListDiv.innerHTML = ''; // 기존 리스트 초기화
+
+  if (books.length === 0) {
+    bookListDiv.innerHTML = '<p>검색 결과가 없습니다.</p>';
+    return;
   }
+
+  //검색시 출력 리스트 및 이미지 사진 없을때 나오는 이미지
+  books.forEach((book, index) => {
+    const bookDiv = document.createElement('div');
+    bookDiv.classList.add('book-item', `search_book${index + 1}`);
+    bookDiv.innerHTML = `
+      <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
+      <p>제목: ${book.titleInfo}</p>
+      <p>저자: ${extractAuthorName(book.authorInfo)}</p>
+    `;
+    bookListDiv.appendChild(bookDiv);
+  });
+
+}
+
+
+
+
+        // <p>출판 정보: ${book.pubInfo}</p>
+        // <h3>제목: ${book.titleInfo}</h3>
+        // ${book.imageUrl ? `<img src="http://cover.nl.go.kr/${book.imageUrl}" alt="${book.titleInfo}">` : ''}
+        // <p>상세 링크: <a href="${book.detailLink}" target="_blank">여기</a></p>
+        // <p>유형: ${book.typeName}</p>
+        // <p>분류: ${book.kdcName1s}</p>
