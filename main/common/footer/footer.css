@@ -1,6 +1,4 @@
 footer{
-    position: absolute;
-    bottom: 0;  
     width:100%;
     padding: 100px 150px;
     background-color: white;
@@ -12,11 +10,12 @@ footer{
   }
   .footer-top-leftBox-brand{
     margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: 700;
+    color: #000;
   }
-  .footer-top-leftBox-info span{
+  .footer-top-leftBox-info a{
     margin-right: 10px;
+    margin-top: 10px;
+    color: #000;
   }
   .footer-top-rightBox{
     display: flex;
@@ -28,7 +27,6 @@ footer{
   .footer-bottom{
     margin-top: 20px;
     color: #999;
-    font-size: small;
   }
 
   @media (max-width : 1023px) {
@@ -62,6 +60,13 @@ footer{
   @media (max-width:767px){
     footer{
       padding: 100px 50px;
+    }
+      
+  }
+
+  @media (max-width:480px){
+    footer{
+      padding: 100px 30px;
     }
       
   }

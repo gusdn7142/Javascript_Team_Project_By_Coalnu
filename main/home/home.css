@@ -1,13 +1,11 @@
 .category{
-    font-size: 24px;
-    font-weight: 700;
     margin-bottom: 20px;
 }
 .category-Button button{
-    border: 1px solid #000;
+    border: 1px solid #585858;
     border-radius: 30px;
     margin-right: 10px;
-    padding: 0 15px;
+    padding: 0 16px;
 }
 
 .category-Button-black{

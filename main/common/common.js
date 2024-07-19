@@ -14,3 +14,4 @@ document.addEventListener("DOMContentLoaded", function () {
     loadHTML('nav', '../common/nav/nav.html');
     loadHTML('footer', '../common/footer/footer.html');
 });
+
