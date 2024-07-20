@@ -1,3 +1,43 @@
+.main-container{
+    width: 1140px;
+    margin: auto; 
+}
+
+.main-top-carousel{
+    width: 800px;
+    margin: auto;
+}
+
+body {
+    height: 2200px;
+}
+
+.main-top-carousel-text {
+    position: absolute;
+    top: 220px;
+    left: 250px;    
+}
+
+.main-top-carousel-button {
+    background-color: #111111;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.main-top-carousel-shareButton {
+    background-color: #111111;
+    width: 152px;
+    height: 48px;
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+.main-top-carousel-shareButton-icon{
+    color: #FFFFFF;
+    padding-left: 8px;
+}
+
 .category{
     margin-bottom: 20px;
 }
@@ -21,3 +61,5 @@
 @media(max-width : 1023px) {
     
 }
+
+

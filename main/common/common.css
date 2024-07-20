@@ -12,6 +12,8 @@ body {
 	font-size: 18px;
 	color: #111111;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif' !important;
+  /* position: relative; */
+  /* min-height: 100vh; */
 }
 
 ul,li,ol {
@@ -99,3 +101,99 @@ a {
 .custom-bgColor-darkGrey {
   background-color: #585858;
 }
+
+
+
+
+/* New Definition */
+.custom-mg-top-60{
+  margin-top: 60px;
+}
+
+.custom-mg-top-32{
+  margin-top: 32px;
+}
+
+.custom-mg-top-24{
+  margin-top: 24px;
+}
+
+.custom-mg-top-8{
+  margin-top: 8px;
+}
+
+
+/* .custom-mg-top-4{
+  margin-top: 4px;
+} */
+
+
+
+.custom-mg-bottom-60{
+  margin-bottom: 60px;
+}
+
+.custom-mg-bottom-32{
+  margin-bottom: 32px;
+}
+
+.custom-mg-bottom-24{
+  margin-bottom: 24px;
+}
+
+.custom-mg-bottom-8{
+  margin-bottom: 8px;
+}
+
+/* .custom-mg-bottom-4{
+  margin-bottom: 4px;
+} */
+
+
+
+
+
+.custom-mg-left-56{
+  margin-left: 56px;
+}
+
+.custom-mg-right-56{
+  margin-right: 56px;
+}
+
+
+.custom-mg-right-48{
+  margin-right: 48px;
+}
+
+
+
+
+.custom-mg-left-48{
+  margin-left: 48px;
+}
+
+
+.custom-mg-left-24{
+  margin-left: 24px;
+}
+
+.custom-mg-right-24{
+  margin-right: 24px;
+}
+
+
+
+
+
+
+
+
+
+.custom-bgColor-black {
+  background-color: #111111;
+}
+
+
+
+
