@@ -22,6 +22,7 @@ let pageNum = 1;
 const pageSize = 15;
 const groupSize = 5;
 
+
 //api에서 책 정보 추출
 const getBookInfo = async () => {
   try {
@@ -57,6 +58,7 @@ const searchBook = async () => {
   url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true&v1=${keyword}&f1=title`);
   await getBookInfo();
 }
+
 
 //검색페이지 기본 메세지 보여주기
 const showDefaultMessage = () => {
