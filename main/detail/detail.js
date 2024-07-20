@@ -14,7 +14,7 @@ const titleKeyword = params.get('titleKeyword');             //특정 파라미�
 const authorKeyword = params.get('authorKeyword'); 
 
 //1-2) api key 불러오기
-const apiKey = config.apikey;
+const apiKey = "76faa9053c59326364cd62f1f1375e2d77db3e92ae9879832c4d569414929619"; //config.apikey;
 
 //1-3) API 호출 & 도서대여 & 도서 이미지 URL 초기값 지정
 let bookAPIDomain = `https://www.nl.go.kr/NL/search/openApi/search.do`; //API 호출 URL 

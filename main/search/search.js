@@ -1,5 +1,5 @@
 //변수 설정
-const apikey = config.apikey; //api_key
+const apikey = "76faa9053c59326364cd62f1f1375e2d77db3e92ae9879832c4d569414929619"; //config.apikey; //api_key
 let bookList = [];
 let userInput = document.getElementById("search-input");
 
@@ -72,14 +72,15 @@ const render = () => {
   const bookHTML = bookList.map(book => {
     // 책 제목에서 <span> 태그 제거
    const cleanTitle = stripHTMLTags(book.titleInfo);
+  
     console.log(`Clean Title: ${cleanTitle}`); 
     return`
     <div class="row">
             <div class="col-lg-4">
             <!-- 상세 링크 연결 로컬 테스트용 -->
-                <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" >
+             <!--   <a href="${window.location.origin}titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->
             <!-- 상세 링크 연결 도메인(netlify) -->
-           <!-- <a href="${window.location.hostname}/main/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->  
+            <a href="https://munheon-garden.netlify.app/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > 
                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
             </div>
             <div class="col-lg-8">
