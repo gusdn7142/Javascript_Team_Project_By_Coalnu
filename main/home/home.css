@@ -138,8 +138,9 @@
 .dropdown-button{
     background-color: white;
     border-radius: 30px;
-    padding-left: 15px;
-    width:100px;
+    padding: 5px 10px;
+    width:80px;
+    border: 1px solid #000;
 }
 
 
