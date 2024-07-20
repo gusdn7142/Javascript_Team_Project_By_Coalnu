@@ -250,10 +250,6 @@ a {
     font-size: 14px;
   }
 
-  .responsive-mg-top {
-    margin-top: 8px;
-  }
-
   .responsive-mg-bottom-16 {
     margin-bottom: 16px;
   }
@@ -265,6 +261,11 @@ a {
     max-width: 360px;
     margin: auto;
   }
+
+  .responsive-mg-top-12 {
+    margin-top: 12px;
+  }
+
   
   .responsive-fs-12 {
     font-size: 12px;
