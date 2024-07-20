@@ -146,7 +146,7 @@ const getBookListByAuthor = async () => {
       (bootImageAndText) => {
           return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
 
-                        <div class="book-author-content-image  custom-mg-bottom-8" >      
+                        <div class="book-author-content-image  custom-mg-bottom-8 " >      
                             <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='./image/boot_null_image.jpg';">
                         </div>
 
