@@ -78,3 +78,10 @@ nav{
     }
       
   }
+
+  @media (max-width:480px){
+    .search-icon-button{
+        margin-right: 0px;
+    }
+      
+  }

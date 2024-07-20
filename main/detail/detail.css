@@ -108,7 +108,6 @@ main {
     align-items: center;
 }
 
-
 @media (max-width:1023px){
     .book-detail{
         width: 600px;
@@ -125,6 +124,7 @@ main {
 
     .book-author {
         /* border: 5px solid greenyellow;  */
+
         margin: 0 0 ;
     }
 
