@@ -1,42 +1,22 @@
-.main-container{
-    width: 1140px;
+/*
+* main 부분
+*/
+
+
+.main-carousel-container{
+    width: 800px;
     margin: auto; 
 }
 
-.main-top-carousel{
-    width: 800px;
-    margin: auto;
-}
 
-.btn{
-    border-color: black;
-    border-radius: 30px;
-    margin-right: 10px;
-}
 
-.button-info {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.btn-dark:hover {
-    background-color: #000;
-}
-
-.btn-light:hover {
-    background-color: white;
-    border-color: #000;
-}
-
-body {
-    height: 2200px;
-}
-
+/*
+* carousel 부분
+*/
 .main-top-carousel-text {
     position: absolute;
     top: 220px;
-    left: 250px;    
+    left: 100px;    
 }
 
 .main-top-carousel-button {
@@ -51,10 +31,212 @@ body {
     width: 152px;
     height: 48px;
     border-radius: 20px;
-    margin-top: 60px;
 }
 
-.main-top-carousel-shareButton-icon{
+.main-top-carousel-shareButton-icon {
     color: #FFFFFF;
     padding-left: 8px;
 }
+
+.show-pad {
+    display: none;
+}
+
+.show-phone {
+    display: none;
+}
+
+
+/*
+* categorys 부분
+*/
+/* .categorys {
+    width: 1140px; 
+    margin: 74px auto 0 auto;
+} */
+
+.categorys-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categorys-btn{
+    border-color: #585858;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    padding: 5px 16px;
+    min-width: 100px;
+    height: 40px;
+}
+
+.categorys-btn:hover{
+    background-color: #111111 !important;
+    color: white !important;
+}
+
+/* .categorys-btn-dark:hover {
+    background-color: #000;
+}
+ */
+
+
+
+/*
+*  additional-text  부분
+*/
+.additional-text  {
+    display: flex; 
+    justify-content: space-between;
+    /* width: 1140px; */
+    margin: 32px auto 0 auto;
+}
+
+.additional-text-rightLine img {
+    width:15px;
+    height: 13.33px;
+    border: none; 
+    margin-right: 15px;
+}
+
+
+
+
+/*
+*  book-ImageAndText-List 부분
+*/
+.book-ImageAndText-List {
+    /* border: 1px solid salmon;  */
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); 
+    gap: 48px; 
+    max-width: 1140px; 
+    margin: 32px auto;
+}
+
+
+/*
+*  book-ImageAndText-one  부분
+*/
+
+.book-image {
+    max-width:188px; 
+    max-height: 266px;
+}
+
+
+.book-image img {
+    width: 188px; 
+    border-color: #E0E0E0;
+}
+
+.nav-item{
+    display: none;
+}
+
+.dropdown-button{
+    background-color: white;
+    border-radius: 30px;
+    padding-left: 15px;
+    width:100px;
+}
+
+
+@media screen and (max-width: 1023px) { 
+    .carousel-item img {
+        width: 600px;
+        margin: auto; 
+    }
+
+    .main-top-carousel-text {
+        text-align: center;
+        top: 280px;
+        left: 256px;        
+    }
+
+    .categorys-btn{
+        display: none;
+    }
+    .nav-item{
+        display: contents;
+    }
+    /* .categorys {
+        width: 1010px; 
+        padding: 0 50px;
+    } */
+    .categorys-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        
+    .show-pad {
+        display: block;
+        width: 600px;
+    }
+
+    .show-web {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 767px) { 
+    .nav-link{
+        padding-right: 60px;
+    }
+    /* .categorys {
+        width: 730px; 
+        padding: 0px
+    } */
+
+    .carousel-item img {
+        width: 360px;
+        margin: auto; 
+    }
+
+    
+    .main-carousel-container {
+        width: 360px;
+        margin: auto; 
+    }
+
+    .main-top-carousel-text {
+        text-align: center;
+        top: 300px;
+        left: 80px; 
+  
+    }
+
+    .responsive-top-carousel-text {
+        left: 100px;
+    }
+    
+    
+    .show-phone {
+        display: block;
+        width: 360px;
+    }
+
+    .show-pad {
+        display: none;
+    }
+
+    .show-web {
+        display: none;
+    }
+  
+    .hidden-phone {
+        display: none;
+    }
+}
+
+@media (max-width:480px){
+    .nav-link{
+        padding-right: 50px;
+    }
+    /* .categorys {
+        width: 450px; 
+        padding: 0px
+    } */
+  }
