@@ -10,6 +10,9 @@ userInput.addEventListener("keyup", (event) => {
   }
 })
 
+//기본 메세지
+document.getElementById("book-list").innerHTML = '<div class="main-mid-inputInfo custom-fs-20 medium-text" role="alert">검색 결과가 없습니다. 검색어를 입력해주세요.</div>';
+
 //api주소 설정
 let url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true`);
 

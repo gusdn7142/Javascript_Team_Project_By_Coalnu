@@ -17,6 +17,13 @@
   cursor: pointer;
 }
 
+.main-mid-inputInfo {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
 .main-bottom-pagination {
   display: flex;
   justify-content: center;
@@ -35,6 +42,7 @@
   align-items: center;
   margin-left: 12px;
   margin-right: 12px;
+  color: #111111;
 }
 
 .main-bottom-pagination-link.active .main-bottom-pagination-num {
@@ -61,7 +69,7 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-    .main-bottom-pagination-link {
+    .main-bottom-pagination-num {
         width: 36px;
         height: 36px;
         border-radius: 10px;
