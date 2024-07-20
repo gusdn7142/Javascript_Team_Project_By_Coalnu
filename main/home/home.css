@@ -1,10 +1,7 @@
 /*
 * main 부분
 */
-.main-container{
-    max-width: 1140px;  /* width -> max-width로 수정*/
-    margin: auto; 
-}
+
 
 .main-carousel-container{
     width: 800px;
@@ -53,10 +50,10 @@
 /*
 * categorys 부분
 */
-.categorys {
+/* .categorys {
     width: 1140px; 
     margin: 74px auto 0 auto;
-}
+} */
 
 .categorys-title {
     display: flex;
@@ -91,7 +88,7 @@
 .additional-text  {
     display: flex; 
     justify-content: space-between;
-    width: 1140px;
+    /* width: 1140px; */
     margin: 32px auto 0 auto;
 }
 
@@ -146,22 +143,7 @@
 
 
 @media screen and (max-width: 1023px) { 
-    .categorys-btn{
-        display: none;
-    }
-    .nav-item{
-        display: contents;
-    }
-    .categorys {
-        width: 1010px; 
-        padding: 0 50px;
-    }
-    .categorys-title {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .main-carousel-container {
+    .carousel-item img {
         width: 600px;
         margin: auto; 
     }
@@ -169,8 +151,24 @@
     .main-top-carousel-text {
         text-align: center;
         top: 280px;
-        left: 184px;        
+        left: 256px;        
     }
+
+    .categorys-btn{
+        display: none;
+    }
+    .nav-item{
+        display: contents;
+    }
+    /* .categorys {
+        width: 1010px; 
+        padding: 0 50px;
+    } */
+    .categorys-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
         
     .show-pad {
         display: block;
@@ -187,11 +185,17 @@
     .nav-link{
         padding-right: 60px;
     }
-    .categorys {
+    /* .categorys {
         width: 730px; 
         padding: 0px
+    } */
+
+    .carousel-item img {
+        width: 360px;
+        margin: auto; 
     }
 
+    
     .main-carousel-container {
         width: 360px;
         margin: auto; 
@@ -200,8 +204,14 @@
     .main-top-carousel-text {
         text-align: center;
         top: 300px;
-        left: 100px;      
+        left: 80px; 
+  
     }
+
+    .responsive-top-carousel-text {
+        left: 100px;
+    }
+    
     
     .show-phone {
         display: block;
@@ -225,8 +235,8 @@
     .nav-link{
         padding-right: 50px;
     }
-    .categorys {
+    /* .categorys {
         width: 450px; 
         padding: 0px
-    }
+    } */
   }
