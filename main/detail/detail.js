@@ -83,7 +83,7 @@ const getDetailBookByKeyword = async () => {
 
         //3-2-1) 상세 도서 이미지 setting
         if(detailBookData.result[0].imageUrl == ''){
-          detailBookImage.src = './image/boot_null_image.jpg';
+          detailBookImage.src = '../common/image/book-null-image.jpg';
         } else{
           detailBookImage.src = bootDetailImageDomain + detailBookData.result[0].imageUrl;
         }
@@ -147,7 +147,7 @@ const getBookListByAuthor = async () => {
           return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
 
                         <div class="book-author-content-image  custom-mg-bottom-8" >      
-                            <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='./image/boot_null_image.jpg';">
+                            <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
                         </div>
 
                         <div class="book-author-content-firstLine custom-fs-16"  >
