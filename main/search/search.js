@@ -1,62 +1,151 @@
-async function getBookInfo(keyword) {
-  const apikey = config.apikey;
-  const url = 
-  `https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&kwd=${encodeURIComponent(keyword)}&pageSize=15&pageNum=1&sort=ititle,iauthor&total=`;
-console.log(apikey);
+//변수 설정
+const apikey = config.apikey; //api_key
+let bookList = [];
+let userInput = document.getElementById("search-input");
+
+//스페이스로 검색
+userInput.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    searchBook(event);
+  }
+})
+
+//기본 메세지
+document.getElementById("book-list").innerHTML = '<div class="main-mid-inputInfo custom-fs-20 medium-text" role="alert">검색 결과가 없습니다. 검색어를 입력해주세요.</div>';
+
+//api주소 설정
+let url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true`);
+
+//pagination 변수 설정
+let total = 0;
+let pageNum = 1;
+const pageSize = 15;
+const groupSize = 5;
+
+//api에서 책 정보 추출
+const getBookInfo = async () => {
   try {
+    url.searchParams.set("pageNum", pageNum);
+    url.searchParams.set("pageSize", pageSize); 
+
     const response = await fetch(url);
-    const resultSearch  = await response.json();
-    console.log("API Response:", resultSearch );
-    return resultSearch ;
+    let data = await response.json();
+    // console.log(data);
+
+    if (response.status === 200) {
+      if (data.total === 0) {   
+        throw new Error("검색된 정보가 없습니다.");
+      }
+      bookList = data.result;
+      total = data.total;
+      render();
+      paginationRender();
+    } else {
+      throw new Error(data.message);
+    }
+
   } catch (error) {
-    console.error("ERROR : ", error);
-    return null;
-  }
-}
-
-//저자 이름만 출력
-function extractAuthorName(authorInfo) {
-  // 예: "홍길동 저"에서 "홍길동"만 추출
-  const nameMatch = authorInfo.match(/^[^\s]+/);
-  const name = nameMatch ? nameMatch[0] : authorInfo;
-  return name.length > 20 ? name.substring(0, 20) + "..." : name;
-}
-
-
-//검색했을때 나오는 결과
-async function searchBooks() {
-  const searchInput = document.getElementById('search-input').value;
-  const resultSearch = await getBookInfo(searchInput);
-  const books = resultSearch?.result || [];
-
-  const bookListDiv = document.getElementById('book-list');
-  bookListDiv.innerHTML = ''; // 기존 리스트 초기화
-
-  if (books.length === 0) {
-    bookListDiv.innerHTML = '<p>검색 결과가 없습니다.</p>';
-    return;
+    errorRender(error.message);
   }
 
-  //검색시 출력 리스트 및 이미지 사진 없을때 나오는 이미지
-  books.forEach((book, index) => {
-    const bookDiv = document.createElement('div');
-    bookDiv.classList.add('book-item', `search_book${index + 1}`);
-    bookDiv.innerHTML = `
-      <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
-      <p>제목: ${book.titleInfo}</p>
-      <p>저자: ${extractAuthorName(book.authorInfo)}</p>
-    `;
-    bookListDiv.appendChild(bookDiv);
-  });
-
 }
 
+//책 정보 검색
+const searchBook = async () => {
+  pageNum = 1;
+  const keyword = document.getElementById("search-input").value;
+  url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true&v1=${keyword}&f1=title`);
+  await getBookInfo();
+}
 
+//책 정보 렌더링
+const render = () => {
+  const bookHTML = bookList.map(book =>
+    `<div class="row">
+            <div class="col-lg-4">
+                <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
+            </div>
+            <div class="col-lg-8">
 
+                <!-- <div>${
+                  book.titleInfo == null || book.titleInfo == "" ? "제목 없음"
+                  : book.titleInfo.length > 10 ? book.titleInfo.substring(0, 10) + "..."
+                  : book.titleInfo
+                }</div> -->
 
-        // <p>출판 정보: ${book.pubInfo}</p>
-        // <h3>제목: ${book.titleInfo}</h3>
-        // ${book.imageUrl ? `<img src="http://cover.nl.go.kr/${book.imageUrl}" alt="${book.titleInfo}">` : ''}
-        // <p>상세 링크: <a href="${book.detailLink}" target="_blank">여기</a></p>
-        // <p>유형: ${book.typeName}</p>
-        // <p>분류: ${book.kdcName1s}</p>
+                <div>
+                  ${book.titleInfo}
+                </div>
+
+                <p>${
+                  book.authorInfo == null || book.authorInfo == "" ? "작가 없음"
+                  : book.authorInfo.length > 5 ? book.authorInfo.substring(0, 5) + "..."
+                  : book.authorInfo
+                }</p>,
+                <p>${
+                  book.pubInfo == null || book.pubInfo == "" ? "출판사 없음"
+                  : book.pubInfo.length > 5 ? book.pubInfo.substring(0, 5) + "..."
+                  : book.pubInfo
+                }</p>
+            </div>
+        </div>`
+  ).join('');
+
+  document.getElementById("book-list").innerHTML = bookHTML;
+}
+
+//에러 렌더링
+const errorRender = (errorMessage) => {
+  const errorHtml = `<div class="alert alert-danger" role="alert">
+    ${errorMessage}
+    </div>`;
+
+  document.getElementById("book-list").innerHTML = errorHtml;
+}
+
+//페이지네이션 렌더링
+const paginationRender = () => {
+  const totalPages = Math.ceil(total / pageSize);
+  const pageGroup = Math.ceil(pageNum / groupSize);
+  let lastPage = pageGroup * groupSize;
+  let paginationHTML = ``;
+
+  if (lastPage > totalPages) {
+    lastPage = totalPages;
+  }
+  const firstPage = lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
+
+  if (pageNum > 1) {
+    paginationHTML = `
+        <li class="main-bottom-pagination-link" onclick="moveToPage(1)">
+          <a class="custom-fs-16 responsive-fs-12 medium-text">&lt;&lt;</a>
+        </li>
+        <li class="main-bottom-pagination-link" onclick="moveToPage(${pageNum - 1})">
+          <a class="custom-fs-16 responsive-fs-12 medium-text">&lt;</a>
+        </li>`;
+  }
+
+  for (let i = firstPage; i <= lastPage; i++) {
+    paginationHTML += `
+      <li class="main-bottom-pagination-link ${i === pageNum ? "active" : ""}" onclick="moveToPage(${i})">
+        <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text" href="#">${i}</a>
+      </li>`;
+  }
+  if (pageNum < totalPages) {
+    paginationHTML += `
+      <li class="main-bottom-pagination-link" onclick="moveToPage(${pageNum + 1})">
+        <a class="custom-fs-16 responsive-fs-12 medium-text" href="#">&gt;</a>
+      </li>
+      <li class="main-bottom-pagination-link" onclick="moveToPage(${totalPages})">
+        <a class="custom-fs-16 responsive-fs-12 medium-text" href="#">&gt;&gt;</a>
+      </li>`
+  }
+
+  document.querySelector(".main-bottom-pagination").innerHTML = paginationHTML;
+}
+
+//페이지네이션 이동
+const moveToPage = (page) => {
+  pageNum = page;
+  getBookInfo();
+}
