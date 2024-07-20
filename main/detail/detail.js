@@ -1,7 +1,7 @@
-// URL 예시1 : http://127.0.0.1:5502/main/detail_test/detail.html?titleKeyword=RS·GIS 기법을 이용한 물유출 특성 예측기술 개발&authorKeyword=홍석영 김이현 정강호 임상규 하상건[1956-] 이남종 허승오 장갑수 홍종운
-// URL 예시2 : http://127.0.0.1:5502/main/detail_test/detail.html?titleKeyword=전라북도, 환황해권 시대 신산업·물류중심지로 발전 : 국가재정운용계획&authorKeyword=기획예산처
-// URL 예시3 : http://127.0.0.1:5502/main/detail_test/detail.html?titleKeyword=運動選手集團의 社會性 形成要因에 關한 硏究&authorKeyword=김대건[1939-]
-// URL 예시4 : http://127.0.0.1:5502/main/detail_test/detail.html?titleKeyword=2006년도 예산안 편성을 위한 설문조사 문항, 조사결과, 예산 반영여부 및 소요 예산&authorKeyword=기획예산처
+// URL 예시1 : http://127.0.0.1:5502/main/detail/detail.html?titleKeyword=RS·GIS 기법을 이용한 물유출 특성 예측기술 개발&authorKeyword=홍석영 김이현 정강호 임상규 하상건[1956-] 이남종 허승오 장갑수 홍종운
+// URL 예시2 : http://127.0.0.1:5502/main/detail/detail.html?titleKeyword=전라북도, 환황해권 시대 신산업·물류중심지로 발전 : 국가재정운용계획&authorKeyword=기획예산처
+// URL 예시3 : http://127.0.0.1:5502/main/detail/detail.html?titleKeyword=運動選手集團의 社會性 形成要因에 關한 硏究&authorKeyword=김대건[1939-]
+// URL 예시4 : http://127.0.0.1:5502/main/detail/detail.html?titleKeyword=2006년도 예산안 편성을 위한 설문조사 문항, 조사결과, 예산 반영여부 및 소요 예산&authorKeyword=기획예산처
 
 
 
@@ -169,14 +169,6 @@ const getBookListByAuthor = async () => {
 
 getBookListByAuthor();      //3. ‘저자 and 제목’ 조건 검색 - 단일 도서 조회 API 호출
 getDetailBookByKeyword();   //4. ‘저자’ 조건 검색 - 도서 List 조회 API 호출
-
-
-
-
-
-
-  
-
 
 
 
