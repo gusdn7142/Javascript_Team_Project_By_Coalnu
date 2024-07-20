@@ -13,52 +13,33 @@
 <body>
   <div id="nav"></div>
 
-  <main class="search-main">
-    <div>검색</div>
-    <div class="search-container">
+  <main class="main-container">
+    <div class="custom-fs-40 bold-text custom-mg-top-60">검색</div>
+    
+    <!-- inputArea -->
+    <div class="main-top-inputArea custom-mg-top-24">
      
       <input type="text" id="search-input" placeholder="도서 제목을 입력하세요">
-      <button onclick="searchBook()">검색</button>
+      <button onclick="searchBook()"><i class="fa-solid fa-magnifying-glass"></i></button>
     
     </div>
-    <div id="book-list" class="book-list">
+
+    <!-- bookList -->
+    <div id="book-list" class="main-mid-bookList">
         
     </div>
 
-  </main>
-    <!-- 페이지네이션 -->
+  
+    <!-- pagination -->
     <div class="custom-mg-top-60 custom-mg-bottom-60">
         <ul class="main-bottom-pagination">
-          <!-- <li class="main-bottom-pagination-link">
-            <a class="custom-fs-16 responsive-fs-12 medium-text">&lt;&lt;</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="custom-fs-16 responsive-fs-12 medium-text">&lt;</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text">1</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text">2</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text">3</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text">4</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="main-bottom-pagination-num custom-fs-16 responsive-fs-12 medium-text">5</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="custom-fs-16 responsive-fs-12 medium-text">&gt;</a>
-          </li>
-          <li class="main-bottom-pagination-link">
-            <a class="custom-fs-16 responsive-fs-12 medium-text">&gt;&gt;</a>
-          </li> -->
+        
         </ul>
     </div>
 
+  </main>
+    
+    <!-- footer -->
     <div id="footer"></div>
 
     <script

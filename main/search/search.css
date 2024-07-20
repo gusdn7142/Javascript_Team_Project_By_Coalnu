@@ -1,113 +1,49 @@
+.main-container {
+  width: 1140px;
+  margin: auto;
+}
+
 .main-bottom-pagination {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .main-bottom-pagination-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-bottom-pagination-link a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 12px;
-    margin-right: 12px;
-}
-
-.main-bottom-pagination-link.active .main-bottom-pagination-num {
-    background-color: #8B0000;
-    color: #FFFFFF;
-}
-
-.main-bottom-pagination-num {
-    background-color: #F6E7E0;
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-}
-
-.main-bottom-pagination-num:hover {
-    background-color: #8B0000;
-    color: #FFFFFF;
-}
-
-
-.search-main{
   display: flex;
-  border: 5px solid red;
-}
-
-
-
-.search-container {
-position:relative;
-left:210px;
-top:130px;
-
-}
-
-.search-container input {
-  width: 300px;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.search-container button {
-  padding: 10px;
-  font-size: 16px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
-.book-list{
-  width: 1350px;
-  height: 1040px;
-  margin-top : 324px;
-  margin-bottom: 182px;
-  overflow: hidden;
-  justify-content: space-between; 
-  border: 5px solid blue;
+.main-bottom-pagination-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
-.book-item {
- float: left;
-  width: 180px;
-  height: 320px;
-  justify-content: space-between; 
-  margin-bottom: 40px;
-  border: 2px solid red;
-  margin-right: 59px;
- 
-
+.main-bottom-pagination-link.active .main-bottom-pagination-num {
+  background-color: #8B0000;
+  color: #FFFFFF;
 }
+
+.main-bottom-pagination-num {
+  background-color: #F6E7E0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.main-bottom-pagination-num:hover {
+  background-color: #8B0000;
+  color: #FFFFFF;
+}
+
 
 img {
   width: 180px;
   height: 266px;
-}
-
-.book-item h3 {
-  font-size: 14px;
-  margin: 10px 0;
-}
-
-.book-item p {
-  font-size: 12px;
-  margin: 5px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.book-item a {
-  color: blue;
-  text-decoration: none;
-}
-
-.book-item a:hover {
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 767px) {
