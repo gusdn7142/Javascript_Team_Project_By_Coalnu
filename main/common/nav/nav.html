@@ -1,21 +1,42 @@
-
-
-
-  <nav class="nav-bar">
-    <div class="navbar-brand">
-      문헌의 정원
-    </div>
-    <div class="nav-link">
-      <a href="">도서</a>
-      <a href="">고문헌</a>
-      <a href="">학위논문</a>
-      <a href="">잡지/학술지</a>
-      <a href="">신문</a>
-      <a href="">기사</a>
-    </div>
-    <div class="search-icon">
-      <a><i class="fa-solid fa-magnifying-glass"></i></a>
+<body>
+  <nav>
+    <div class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand custom-fs-24 bold-text" href="#">문헌의 정원</a>
+        <div class="nav-top-link">
+            <a href="">도서</a>
+            <a href="">고문헌</a>
+            <a href="">학위논문</a>
+            <a href="">잡지/학술지</a>
+            <a href="">신문</a>
+            <a href="">기사</a>
+          </div>
+        <div>
+            <button class="search-icon-button"><i class="fa-solid fa-magnifying-glass icon-button" ></i></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="hamburger-menu-list">
+              <button>도서</button>
+              <button>고문헌</button>
+              <button>학위논문</button>
+              <button>잡지/학술지</button>
+              <button>신문</button>
+              <button>기사</button>
+          </div>
+              
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
-
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="apikey.js"></script>
+    <script src="main.js"></script>
+</body>

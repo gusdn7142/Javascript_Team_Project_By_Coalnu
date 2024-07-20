@@ -8,27 +8,6 @@
     margin: auto;
 }
 
-.btn{
-    border-color: black;
-    border-radius: 30px;
-    margin-right: 10px;
-}
-
-.button-info {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.btn-dark:hover {
-    background-color: #000;
-}
-
-.btn-light:hover {
-    background-color: white;
-    border-color: #000;
-}
-
 body {
     height: 2200px;
 }
@@ -58,3 +37,29 @@ body {
     color: #FFFFFF;
     padding-left: 8px;
 }
+
+.category{
+    margin-bottom: 20px;
+}
+.category-Button button{
+    border: 1px solid #585858;
+    border-radius: 30px;
+    margin-right: 10px;
+    padding: 0 16px;
+}
+
+.category-Button-black{
+    background-color: #000;
+    color: white;
+}
+
+.category-Button-white{
+    background-color: white;
+    color: #000;
+}
+
+@media(max-width : 1023px) {
+    
+}
+
+
