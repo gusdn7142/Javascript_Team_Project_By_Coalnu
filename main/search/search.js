@@ -93,7 +93,7 @@ const render = () => {
   const bookItemsHTML = displayedBooks.map(book => `  
     <div class="book-ImageAndText-one">
       <div class="custom-mg-bottom-8">
-        <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image'}"/>
+        <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
       </div>
 
       <div class="custom-fs-20 bold-text">
