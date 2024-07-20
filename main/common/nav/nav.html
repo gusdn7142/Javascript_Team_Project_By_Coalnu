@@ -12,7 +12,7 @@
             <a href="">기사</a>
           </div>
         <div>
-            <button class="search-icon-button"><i class="fa-solid fa-magnifying-glass icon-button" ></i></button>
+            <button class="search-icon-button" id="searchIconButton"><i class="fa-solid fa-magnifying-glass icon-button" ></i></button> <!--  id 추가 serach 페이지 이동 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,4 +39,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="apikey.js"></script>
     <script src="main.js"></script>
+    <script>
+// kks: 돋보기 아이콘 클릭 이벤트 추가
+// 돋보기 아이콘 버튼 ID 값
+const searchIconButton = document.getElementById('searchIconButton');
+
+// 돋보기 아이콘 버튼이 있는지 확인
+if (searchIconButton) {
+  // 돋보기 아이콘 버튼을 클릭했을 때 실행되는 함수
+  searchIconButton.addEventListener('click', function() {
+    // search.html 페이지로 이동
+    window.location.href = 'https://munheon-garden.netlify.app/search/search.html';
+  });
+}
+    </script>
 </body>

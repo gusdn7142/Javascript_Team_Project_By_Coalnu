@@ -148,9 +148,9 @@ const getBookListByAuthor = async () => {
 
                         <div class="book-author-content-image  custom-mg-bottom-8" >
                          <!-- 관련 도서 책 연결 로컬 테스트용 -->
-                            <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${bookImageAndText.authorInfo}" >
+                           <!-- <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${bookImageAndText.authorInfo}" > -->
                          <!-- 관련 도서 연결 도메인(netlify) -->
-                       <!-- <a href="${window.location.hostname}/main/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${(bookImageAndText.authorInfo)}" > -->      
+                            <a href="https://munheon-garden.netlify.app/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${bookImageAndText.authorInfo}" >      
                             <img src="${bookDetailImageDomain + bookImageAndText.imageUrl}" onerror="this.onerror=null; this.src='./image/boot_null_image.jpg';">
                         </div>
 
