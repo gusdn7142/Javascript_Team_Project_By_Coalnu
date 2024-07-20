@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="search.css">
 </head>
 <body>
+  <!-- nav -->
   <div id="nav"></div>
 
   <main class="main-container">
@@ -18,14 +19,12 @@
     
     <!-- inputArea -->
     <div class="main-top-inputArea custom-mg-top-24">
-     
-      <input type="text" id="search-input" placeholder="도서 제목을 입력하세요">
-      <button onclick="searchBook()"><i class="fa-solid fa-magnifying-glass"></i></button>
-    
+      <input type="text" id="search-input" class="custom-fs-20" placeholder="도서 제목을 입력하세요">
+      <i class="fa-solid fa-magnifying-glass" onclick="searchBook()"></i>
     </div>
 
     <!-- bookList -->
-    <div id="book-list" class="main-mid-bookList">
+    <div id="book-list" class="main-mid-bookList custom-mg-top-60">
         
     </div>
 
@@ -39,18 +38,17 @@
 
   </main>
     
-    <!-- footer -->
-    <div id="footer"></div>
+  <!-- footer -->
+  <div id="footer"></div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../common/common.js"></script>
-    <script src="../common/apikey.js"></script>
-    <script src="search.js"></script>
-
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../common/common.js"></script>
+  <script src="../common/apikey.js"></script>
+  <script src="search.js"></script>
   
   </body>
 </html>
