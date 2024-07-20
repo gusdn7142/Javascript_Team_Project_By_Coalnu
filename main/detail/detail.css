@@ -123,6 +123,12 @@ main {
         width: 300px;
     }
 
+    .book-author {
+        /* border: 5px solid greenyellow;  */
+
+        margin: 0 0 ;
+    }
+
     }
 
 @media (max-width:767px){
