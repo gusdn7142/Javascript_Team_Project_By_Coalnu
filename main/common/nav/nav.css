@@ -71,3 +71,10 @@ nav{
         display: contents;
     }
 }
+
+@media (max-width:767px){
+    .container-fluid{
+        margin: 18px 20px;
+    }
+      
+  }
