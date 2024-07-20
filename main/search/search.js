@@ -80,8 +80,7 @@ const render = () => {
                   : book.pubInfo.length > 5 ? book.pubInfo.substring(0, 5) + "..."
                   : book.pubInfo
                   }</span>
-                </div>
-                
+                </div>                
             </div>
         </div>`
   ).join('');
