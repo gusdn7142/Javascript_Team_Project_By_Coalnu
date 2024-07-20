@@ -61,32 +61,26 @@ const searchBook = async () => {
 //책 정보 렌더링
 const render = () => {
   const bookHTML = bookList.map(book =>
-    `<div>
-            <div>
+    `<div class="book-ImageAndText-one">
+            <div class="custom-mg-bottom-8">
                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
             </div>
-            <div class="col-lg-8">
-
-                <!-- <div>${
-                  book.titleInfo == null || book.titleInfo == "" ? "제목 없음"
-                  : book.titleInfo.length > 10 ? book.titleInfo.substring(0, 10) + "..."
-                  : book.titleInfo
-                }</div> -->
-
-                <div>
+            <div>
+                <div class="custom-fs-20">
                   ${book.titleInfo}
                 </div>
 
-                <p>${
+                <div class="custom-fs-16 custom-text-darkGrey">
+                  ${
                   book.authorInfo == null || book.authorInfo == "" ? "작가 없음"
                   : book.authorInfo.length > 5 ? book.authorInfo.substring(0, 5) + "..."
                   : book.authorInfo
-                  }</span>,
-                  <span>${
+                  },
+                  ${
                   book.pubInfo == null || book.pubInfo == "" ? "출판사 없음"
                   : book.pubInfo.length > 5 ? book.pubInfo.substring(0, 5) + "..."
                   : book.pubInfo
-                  }</span>
+                  }
                 </div>                
             </div>
         </div>`
