@@ -15,17 +15,24 @@
   <!-- nav -->
   <div id="nav"></div>
 
-  <main class="main-container">
-  <div>
+  <div class="main-container">
     <div class="custom-fs-40 bold-text custom-mg-top-60">검색</div>
     
     <!-- inputArea -->
-    <div class="main-top-inputArea custom-mg-top-24">
-      <input type="text" id="search-input" class="custom-fs-20 search-input-box" placeholder="도서 제목을 입력하세요">
+    <div class="main-top-inputArea custom-mg-bottom-24 custom-mg-top-24">
+      <input type="text" id="search-input" class="custom-fs-20" placeholder="도서 제목을 입력하세요">
       <i class="fa-solid fa-magnifying-glass" onclick="searchBook()"></i>
     </div>
-  </div>
+  
     <!-- bookList -->
+    <div id="default-message" class="main-mid-inputInfo custom-fs-20 medium-text" role="alert">
+      검색 결과가 없습니다. 검색어를 입력해주세요.
+    </div>
+
+    <div id="totalBooks-message">
+
+    </div>
+
     <div id="book-list" class="main-mid-bookList custom-mg-top-60">
         
     </div>
@@ -38,16 +45,12 @@
         </ul>
     </div>
 
-  </main>
+  </div>
     
   <!-- footer -->
   <div id="footer"></div>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="../common/common.js"></script>
   <script src="../common/apikey.js"></script>
   <script src="search.js"></script>

@@ -1,10 +1,7 @@
 /*
 * main 부분
 */
-.main-container{
-    max-width: 1140px;  /* width -> max-width로 수정*/
-    margin: auto; 
-}
+
 
 .main-carousel-container{
     width: 800px;
@@ -18,6 +15,10 @@
     position: absolute;
     top: 220px;
     left: 100px;    
+}
+
+.carousel-item img {
+    border: none;
 }
 
 .main-top-carousel-button {
@@ -51,10 +52,10 @@
 /*
 * categorys 부분
 */
-.categorys {
+/* .categorys {
     width: 1140px; 
     margin: 74px auto 0 auto;
-}
+} */
 
 .categorys-title {
     display: flex;
@@ -76,6 +77,18 @@
     color: white !important;
 }
 
+.categorys-btn-active{
+    background-color: #111111 !important;
+    color: white !important;
+}
+
+/* .categorys-btn:focus{
+    background-color: #111111 !important;
+    color: white !important;
+} */
+
+
+
 /* .categorys-btn-dark:hover {
     background-color: #000;
 }
@@ -89,7 +102,7 @@
 .additional-text  {
     display: flex; 
     justify-content: space-between;
-    width: 1140px;
+    /* width: 1140px; */
     margin: 32px auto 0 auto;
 }
 
@@ -128,6 +141,7 @@
 
 .book-image img {
     width: 188px; 
+    height: 266px;
     border-color: #E0E0E0;
 }
 
@@ -143,33 +157,54 @@
     border: 1px solid #000;
 }
 
+/*
+*  see-more  부분
+*/
+.see-more {
+    text-align: right;
+}
+
+
+.see-more img {
+    width:6.6px; 
+    height:13.8px; 
+    border:none;
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1023px) { 
+    .main-carousel-container {
+        width: 600px;
+        margin: auto;
+    }
+    
+    .main-top-carousel-text {
+        text-align: center;
+        top: 280px;
+        left: 156px;        
+    }
+
     .categorys-btn{
         display: none;
     }
     .nav-item{
         display: contents;
     }
-    .categorys {
+    /* .categorys {
         width: 1010px; 
         padding: 0 50px;
-    }
+    } */
     .categorys-title {
         display: flex;
         justify-content: space-between;
     }
 
-    .main-carousel-container {
-        width: 600px;
-        margin: auto; 
-    }
-
-    .main-top-carousel-text {
-        text-align: center;
-        top: 280px;
-        left: 184px;        
-    }
         
     .show-pad {
         display: block;
@@ -186,11 +221,17 @@
     .nav-link{
         padding-right: 60px;
     }
-    .categorys {
+    /* .categorys {
         width: 730px; 
         padding: 0px
+    } */
+
+    .carousel-item img {
+        width: 360px;
+        margin: auto; 
     }
 
+    
     .main-carousel-container {
         width: 360px;
         margin: auto; 
@@ -199,8 +240,14 @@
     .main-top-carousel-text {
         text-align: center;
         top: 300px;
-        left: 100px;      
+        left: 80px; 
+  
     }
+
+    .responsive-top-carousel-text {
+        left: 100px;
+    }
+    
     
     .show-phone {
         display: block;
@@ -224,8 +271,8 @@
     .nav-link{
         padding-right: 50px;
     }
-    .categorys {
+    /* .categorys {
         width: 450px; 
         padding: 0px
-    }
+    } */
   }
