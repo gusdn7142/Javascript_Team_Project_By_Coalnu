@@ -12,8 +12,6 @@ body {
 	font-size: 18px;
 	color: #111111;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif' !important;
-  /* position: relative; */
-  /* min-height: 100vh; */
 }
 
 ul,li,ol {
@@ -90,19 +88,9 @@ a {
   background-color: #FFFFFF;
 }
 
-.custom-bgColor-lightOrange {
-  background-color: #F6E7E0;
-}
-
-.custom-bgColor-darkRed {
-  background-color: #8B0000;
-}
-
 .custom-bgColor-darkGrey {
   background-color: #585858;
 }
-
-
 
 
 /* New Definition */
@@ -167,8 +155,6 @@ a {
 }
 
 
-
-
 .custom-mg-left-48{
   margin-left: 48px;
 }
@@ -184,16 +170,88 @@ a {
 
 
 
+.custom-mg-top-60 {
+  margin-top: 60px;
+}
 
+.custom-mg-top-32 {
+  margin-top: 32px;
+}
 
+.custom-mg-top-24 {
+  margin-top: 24px;
+}
 
+.custom-mg-top-8 {
+  margin-top: 8px;
+}
 
-
-
-.custom-bgColor-black {
-  background-color: #111111;
+.custom-mg-top-4 {
+  margin-top: 4px;
 }
 
 
 
+.custom-mg-bottom-60 {
+  margin-bottom: 60px;
+}
 
+.custom-mg-bottom-32 {
+  margin-bottom: 32px;
+}
+
+.custom-mg-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.custom-mg-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.custom-mg-bottom-4 {
+  margin-bottom: 4px;
+}
+
+
+
+.custom-mg-left-56 {
+  margin-left: 56px;
+}
+
+.custom-mg-right-56 {
+  margin-right: 56px;
+}
+
+.custom-mg-right-48 {
+  margin-right: 48px;
+}
+
+@media screen and (max-width: 1023px) { 
+  .responsive-fs-20 {
+    font-size: 20px;
+  }
+
+  .responsive-fs-16 {
+      font-size: 16px;
+  }
+
+  .responsive-fs-14 {
+    font-size: 14px;
+  }
+
+  .responsive-mg-top {
+    margin-top: 8px;
+  }
+
+}
+
+@media screen and (max-width: 767px) { 
+  .responsive-fs-12 {
+    font-size: 12px;
+  }
+  
+  .responsive-fs-10 {
+    font-size: 10px;
+  }
+
+}
