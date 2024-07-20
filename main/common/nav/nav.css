@@ -7,13 +7,9 @@ nav{
     align-items: center;
 }
 
-.bg-body-tertiary{
-    background-color: white;
-}
-
 .container-fluid{
     margin: 18px 60px;
-    background-color: white;
+    background-color: #f8f9fa;
 }
 
 .nav-top-link a{
@@ -22,7 +18,7 @@ nav{
 }
 
 .search-icon-button{
-    background-color: white;
+    background-color: #f8f9fa;
     border: none;
 }
 
@@ -48,7 +44,7 @@ nav{
 
 .hamburger-menu-list button:hover {
     background-color: lightgrey;
-    border-radius: 8px;
+    border-radius: 30px;
   }
 
 .navbar-toggler{
