@@ -143,15 +143,15 @@
 
 
 @media screen and (max-width: 1023px) { 
-    .carousel-item img {
+    .main-carousel-container {
         width: 600px;
-        margin: auto; 
+        margin: auto;
     }
-
+    
     .main-top-carousel-text {
         text-align: center;
         top: 280px;
-        left: 256px;        
+        left: 156px;        
     }
 
     .categorys-btn{
