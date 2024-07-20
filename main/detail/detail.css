@@ -44,6 +44,10 @@ main {
     /* border: 3px solid red; */
 }
 
+.detail-button-rent{
+    background-color: #000;
+    border-radius: 30px;
+}
 
 /*
 * book-author 부분
@@ -53,16 +57,6 @@ main {
     width:1300px; 
     margin: 130px auto 0 auto;
 }
-
-
-/*
-* book-author-title 부분
-*/
-.book-author-title {
-    /* border: 3px solid red; */
-}
-
-
 
 /*
 * book-author-content 부분
@@ -113,3 +107,58 @@ main {
     justify-content: center; 
     align-items: center;
 }
+
+
+@media (max-width:1023px){
+    .book-detail{
+        width: 600px;
+        display: contents;
+    }
+
+    .book-detail {
+        margin: 0 
+    }
+    
+    .detail-nodata{
+        width: 300px;
+    }
+
+    .book-author {
+        /* border: 5px solid greenyellow;  */
+        margin: 0 0 ;
+    }
+
+    }
+
+@media (max-width:767px){
+    .book-detail {
+        width:1040px; 
+        margin: 0 auto;
+    }
+
+    .book-author-content-image {
+        max-width:100px; 
+        max-height: 180px;
+    }
+
+    .detail-nodata{
+        width: 400px;
+    }
+    
+    .book-author {
+        /* border: 5px solid greenyellow;  */
+        width:1300px; 
+        margin: 0 0 ;
+    }
+
+    main {
+        height: 1300px;  
+    }
+
+    }
+
+
+@media (max-width:480px){
+
+    
+    }
