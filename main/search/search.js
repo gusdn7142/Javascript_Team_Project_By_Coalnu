@@ -22,6 +22,7 @@ let pageNum = 1;
 const pageSize = 15;
 const groupSize = 5;
 
+
 //api에서 책 정보 추출
 const getBookInfo = async () => {
   try {
@@ -58,6 +59,7 @@ const searchBook = async () => {
   await getBookInfo();
 }
 
+
 //검색페이지 기본 메세지 보여주기
 const showDefaultMessage = () => {
   document.getElementById("default-message").style.display = 'block';
@@ -93,7 +95,7 @@ const render = () => {
   const bookItemsHTML = displayedBooks.map(book => `  
     <div class="book-ImageAndText-one">
       <div class="custom-mg-bottom-8">
-        <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image'}"/>
+        <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
       </div>
 
       <div class="custom-fs-20 bold-text">

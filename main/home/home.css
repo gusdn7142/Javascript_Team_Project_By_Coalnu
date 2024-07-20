@@ -19,6 +19,10 @@
     left: 100px;    
 }
 
+.carousel-item img {
+    border: none;
+}
+
 .main-top-carousel-button {
     background-color: #111111;
     width: 40px;
@@ -75,6 +79,18 @@
     color: white !important;
 }
 
+.categorys-btn-active{
+    background-color: #111111 !important;
+    color: white !important;
+}
+
+/* .categorys-btn:focus{
+    background-color: #111111 !important;
+    color: white !important;
+} */
+
+
+
 /* .categorys-btn-dark:hover {
     background-color: #000;
 }
@@ -127,6 +143,7 @@
 
 .book-image img {
     width: 188px; 
+    height: 266px;
     border-color: #E0E0E0;
 }
 
@@ -141,17 +158,37 @@
     width:100px;
 }
 
+/*
+*  see-more  부분
+*/
+.see-more {
+    text-align: right;
+}
+
+
+.see-more img {
+    width:6.6px; 
+    height:13.8px; 
+    border:none;
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1023px) { 
-    .carousel-item img {
+    .main-carousel-container {
         width: 600px;
-        margin: auto; 
+        margin: auto;
     }
-
+    
     .main-top-carousel-text {
         text-align: center;
         top: 280px;
-        left: 256px;        
+        left: 156px;        
     }
 
     .categorys-btn{

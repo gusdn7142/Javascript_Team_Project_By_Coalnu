@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="../common/footer/footer.css">
     <link rel="stylesheet" href="../common/nav/nav.css">
     <link rel="stylesheet" href="home.css">
+    <script src="../common/apikey.js"></script>
 </head>
 
 <body>
     
     <div id="nav"></div>
 
-    
+
+
     
     <div class="main-container"> 
         <div class="main-carousel-container">
@@ -70,50 +72,53 @@
               </div>
         </div>
 
-        <div class="categorys">
-            <div class="categorys-title custom-fs-24 bold-text">
-                카테고리별 도서
-                <li class="nav-item dropdown">
-                    <button class="dropdown-button medium-text custom-fs-16"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">전체</a></button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">전체</a></li>
-                      <li><a class="dropdown-item" href="#">기술과학</a></li>
-                      <li><a class="dropdown-item" href="#">문학</a></li>
-                      <li><a class="dropdown-item" href="#">사회과학</a></li>
-                      <li><a class="dropdown-item" href="#">순수과학</a></li>
-                      <li><a class="dropdown-item" href="#">역사</a></li>
-                      <li><a class="dropdown-item" href="#">예술</a></li>
-                      <li><a class="dropdown-item" href="#">어학</a></li>
-                      <li><a class="dropdown-item" href="#">자연과학</a></li>
-                      <li><a class="dropdown-item" href="#">종교</a></li>
-                      <li><a class="dropdown-item" href="#">철학</a></li>
-                      <li><a class="dropdown-item" href="#">종류</a></li>
-                      <li><a class="dropdown-item" href="#">기타</a></li>
-                    </ul>
-                  </li>
-            </div>
-            <div class="categorys-botton">
-                <button class="categorys-btn custom-bgColor-white">전체</button>
-                <button class="categorys-btn custom-bgColor-white">기술과학</button>
-                <button class="categorys-btn custom-bgColor-white">문학</button>
-                <button class="categorys-btn custom-bgColor-white">사회과학</button>
-                <button class="categorys-btn custom-bgColor-white">순수과학</button>
-                <button class="categorys-btn custom-bgColor-white">역사</button>
-                <button class="categorys-btn custom-bgColor-white">예술</button>
-                <button class="categorys-btn custom-bgColor-white">어학</button>
-                <button class="categorys-btn custom-bgColor-white">자연과학</button>
-                <button class="categorys-btn custom-bgColor-white">종교</button>
-                <button class="categorys-btn custom-bgColor-white">철학</button>
-                <button class="categorys-btn custom-bgColor-white">총류</button>
-                <button class="categorys-btn custom-bgColor-white">기타</button>
-            </div>
-        </div>
-    
 
-            <div class="additional-text  custom-mg-top-24">  
+
+        <div class="categorys">
+          <div class="categorys-title custom-fs-24 bold-text">
+              카테고리별 도서
+              <li class="nav-item dropdown">
+                  <a class="dropdown-button nav-link dropdown-toggle medium-text custom-fs-16" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">전체</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">전체</a></li>
+                    <li><a class="dropdown-item" href="#">기술과학</a></li>
+                    <li><a class="dropdown-item" href="#">문학</a></li>
+                    <li><a class="dropdown-item" href="#">사회과학</a></li>
+                    <li><a class="dropdown-item" href="#">순수과학</a></li>
+                    <li><a class="dropdown-item" href="#">역사</a></li>
+                    <li><a class="dropdown-item" href="#">예술</a></li>
+                    <li><a class="dropdown-item" href="#">어학</a></li>
+                    <li><a class="dropdown-item" href="#">자연과학</a></li>
+                    <li><a class="dropdown-item" href="#">종교</a></li>
+                    <li><a class="dropdown-item" href="#">철학</a></li>
+                    <li><a class="dropdown-item" href="#">종류</a></li>
+                    <li><a class="dropdown-item" href="#">기타</a></li>
+                  </ul>
+                </li>
+          </div>
+          <div class="categorys-botton">
+              <button id="all" class="categorys-btn custom-bgColor-white">전체</button>
+              <button class="categorys-btn custom-bgColor-white">기술과학</button>
+              <button class="categorys-btn custom-bgColor-white">문학</button>
+              <button class="categorys-btn custom-bgColor-white">사회과학</button>
+              <button class="categorys-btn custom-bgColor-white">순수과학</button>
+              <button class="categorys-btn custom-bgColor-white">역사</button>
+              <button class="categorys-btn custom-bgColor-white">예술</button>
+              <button class="categorys-btn custom-bgColor-white">어학</button>
+              <button class="categorys-btn custom-bgColor-white">자연과학</button>
+              <button class="categorys-btn custom-bgColor-white">종교</button>
+              <button class="categorys-btn custom-bgColor-white">철학</button>
+              <button class="categorys-btn custom-bgColor-white">총류</button>
+              <button class="categorys-btn custom-bgColor-white">기타</button>
+          </div>
+      </div>
+
+
+
+        <div class="additional-text  custom-mg-top-24">  
               <div class="additional-text-leftLine">
                 <span class="custom-text-darkGrey"> 총 </span> <span>
-                <span class="custom-text-darkRed"> 40,000,000개 </span>
+                <span id="book-total-count" class="custom-text-darkRed">  </span>  <!-- 40,000,000개 -->
               </div>         
               
               <div class="additional-text-rightLine">
@@ -123,12 +128,10 @@
             </div>
 
             <!-- ImageText Box List 부분 -->  
-            <!-- <div id="book-ImageAndText-List" class="book-ImageAndText-List" style="border:1px solid salmon;    display:flex;   width: 1140px; margin: 32px auto 0 auto; "> -->  <!--  flex-wrap: wrap; height:320px;   width: 892px; gap: 56px; -->
             <div id="book-ImageAndText-List" class="book-ImageAndText-List"  >
 
-
               <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
+              <!-- <div  class="book-ImageAndText-one" >                           
 
                   <div class="book-image  custom-mg-bottom-8" >      
                       <img src="../common/image/book-null-image.jpg"> 
@@ -141,157 +144,16 @@
                   <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
                       <span> 정병설 지음, 문학동네 </span>
                   </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-    
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
-              <!-- ImageText Box One 부분 -->
-              <div class="book-ImageAndText-one" >                           
-
-                <div class="book-image  custom-mg-bottom-8" >      
-                    <img src="../common/image/book-null-image.jpg"> 
-                </div>
-
-                <div class="book-text-firstLine custom-fs-20"  >
-                    <span class="bold-text"> 나의 문학 답사일지...</span>
-                </div>
-                
-                <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
-                    <span> 정병설 지음, 문학동네 </span>
-                </div>
-              </div> 
-
+              </div>   -->
             </div>
-        
 
 
-
+            <div class="see-more custom-fs-16">
+              <a href="#"> 
+                <span>더보기&nbsp&nbsp&nbsp</span>  
+                <img src="image/Vector-right.png">
+              </a>
+            </div>
 
         <br>
         <br>
