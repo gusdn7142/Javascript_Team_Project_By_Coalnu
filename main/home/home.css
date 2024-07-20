@@ -2,7 +2,7 @@
 * main 부분
 */
 .main-container{
-    width: 1140px;
+    max-width: 1140px;  /* width -> max-width로 수정*/
     margin: auto; 
 }
 

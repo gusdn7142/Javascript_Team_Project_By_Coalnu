@@ -30,8 +30,10 @@ const getBookInfo = async () => {
 
     const response = await fetch(url);
     let data = await response.json();
+    // console.log(data);
+
     if (response.status === 200) {
-      if (data.result.length === 0) {
+      if (data.total === 0) {   
         throw new Error("검색된 정보가 없습니다.");
       }
       bookList = data.result;
@@ -64,11 +66,17 @@ const render = () => {
                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
             </div>
             <div class="col-lg-8">
-                <div>${
+
+                <!-- <div>${
                   book.titleInfo == null || book.titleInfo == "" ? "제목 없음"
                   : book.titleInfo.length > 10 ? book.titleInfo.substring(0, 10) + "..."
                   : book.titleInfo
-                }</div>
+                }</div> -->
+
+                <div>
+                  ${book.titleInfo}
+                </div>
+
                 <p>${
                   book.authorInfo == null || book.authorInfo == "" ? "작가 없음"
                   : book.authorInfo.length > 5 ? book.authorInfo.substring(0, 5) + "..."
