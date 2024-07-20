@@ -149,7 +149,7 @@
         display: contents;
     }
     .categorys {
-        width: 1023px; 
+        width: 1010px; 
         padding: 0 50px;
     }
     .categorys-title {
@@ -163,17 +163,17 @@
         padding-right: 60px;
     }
     .categorys {
-        width: 760px; 
+        width: 730px; 
         padding: 0px
     }
   }
 
   @media (max-width:480px){
     .nav-link{
-        padding-right: 60px;
+        padding-right: 50px;
     }
     .categorys {
-        width: 480px; 
+        width: 450px; 
         padding: 0px
     }
   }
