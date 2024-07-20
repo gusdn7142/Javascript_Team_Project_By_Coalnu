@@ -86,7 +86,7 @@ const render = () => {
   
   const totalResultsHTML =`  
     <div>
-      <span class="custom-fs-24 bold-text custom-text-darkRed">"${keyword}"</span>으로 총 ${total}개의 검색 결과가 나왔습니다.
+      <span class="custom-fs-24 bold-text custom-text-darkRed">"${keyword}"</span>(으)로 총 ${total}개의 검색 결과가 나왔습니다.
     </div>
   `;
 
