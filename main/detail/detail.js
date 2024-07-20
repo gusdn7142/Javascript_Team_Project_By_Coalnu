@@ -17,9 +17,9 @@ const authorKeyword = params.get('authorKeyword');
 const apiKey = config.apikey;
 
 //1-3) API 호출 & 도서대여 & 도서 이미지 URL 초기값 지정
-let bootAPIDomain = `https://www.nl.go.kr/NL/search/openApi/search.do`; //API 호출 URL 
-let bootRentalDomain = `https://www.nl.go.kr`;                          //도서 대여 URL 
-let bootDetailImageDomain = `https://cover.nl.go.kr/`;                  //도서 이미지 URL
+let bookAPIDomain = `https://www.nl.go.kr/NL/search/openApi/search.do`; //API 호출 URL 
+let bookRentalDomain = `https://www.nl.go.kr`;                          //도서 대여 URL 
+let bookDetailImageDomain = `https://cover.nl.go.kr/`;                  //도서 이미지 URL
 
 
 //1-4) 도서 상세 이미지, 제목, 작가, 카테고리, 비치일, 자료보관 장소 HTML EleMent 조회
@@ -33,7 +33,7 @@ let detailBookBtn = document.getElementById("detailBookBtn");
 
 
 //1-5) [자자로 조회한] 도서 리스트 배열
-let bootImageAndTextList = [];
+let bookImageAndTextList = [];
 
 //1-6) 페이지네이션 초기값 셋팅
 let leftArrow = document.getElementById('book-author-content-left-arrow');
@@ -68,7 +68,7 @@ const getDetailBookByKeyword = async () => {
 
     try {
       //3-1) 도서 상세 검색 API 호출    
-      const response = await fetch(`${bootAPIDomain}?key=${apiKey}&apiType=json&detailSearch=true&f1=title&v1=${titleKeyword}&and1=AND&f2=author&v2=${authorKeyword}`);
+      const response = await fetch(`${bookAPIDomain}?key=${apiKey}&apiType=json&detailSearch=true&f1=title&v1=${titleKeyword}&and1=AND&f2=author&v2=${authorKeyword}`);
       const detailBookData = await response.json();
 
       //3-2) API 응답이 OK이면
@@ -85,7 +85,7 @@ const getDetailBookByKeyword = async () => {
         if(detailBookData.result[0].imageUrl == ''){
           detailBookImage.src = './image/boot_null_image.jpg';
         } else{
-          detailBookImage.src = bootDetailImageDomain + detailBookData.result[0].imageUrl;
+          detailBookImage.src = bookDetailImageDomain + detailBookData.result[0].imageUrl;
         }
 
         //3-2-2) 도서 제목 setting
@@ -109,7 +109,7 @@ const getDetailBookByKeyword = async () => {
 
         //3-2-7) 도서 대여 버튼 클릭 Event
         document.getElementById('detailBookBtn').onclick = function() {
-          window.location.href = bootRentalDomain + detailBookData.result[0].detailLink;  
+          window.location.href = bookRentalDomain + detailBookData.result[0].detailLink;  
         };        
       } else{
           throw new Error(detailBookData.message);
@@ -127,7 +127,7 @@ const getDetailBookByKeyword = async () => {
 const getBookListByAuthor = async () => {
 
     //4-1) 도서 상세 검색 API 호출    
-    const response = await fetch(`${bootAPIDomain}?key=${apiKey}&apiType=json&detailSearch=true&f1=author&v1=${authorKeyword}&pageNum=${pageNum}&pageSize=${pageSize}`);
+    const response = await fetch(`${bookAPIDomain}?key=${apiKey}&apiType=json&detailSearch=true&f1=author&v1=${authorKeyword}&pageNum=${pageNum}&pageSize=${pageSize}`);
     const bookDataList = await response.json();
 
     //4-2) 데이터 Null 체크
@@ -138,24 +138,28 @@ const getBookListByAuthor = async () => {
     }
 
     //4-3) response 값을 json 타입으로 변환
-    bootImageAndTextList = bookDataList.result;           
+    bookImageAndTextList = bookDataList.result;           
 
 
     //4-4) View 렌더링
-    const imageAndTextHTML = bootImageAndTextList.map(
-      (bootImageAndText) => {
+    const imageAndTextHTML = bookImageAndTextList.map(
+      (bookImageAndText) => {
           return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
 
-                        <div class="book-author-content-image  custom-mg-bottom-8" >      
-                            <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='./image/boot_null_image.jpg';">
+                        <div class="book-author-content-image  custom-mg-bottom-8" >
+                         <!-- 관련 도서 책 연결 로컬 테스트용 -->
+                            <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${bookImageAndText.authorInfo}" >
+                         <!-- 관련 도서 연결 도메인(netlify) -->
+                       <!-- <a href="${window.location.hostname}/main/detail/detail.html?titleKeyword=${bookImageAndText.titleInfo}&authorKeyword=${(bookImageAndText.authorInfo)}" > -->      
+                            <img src="${bookDetailImageDomain + bookImageAndText.imageUrl}" onerror="this.onerror=null; this.src='./image/boot_null_image.jpg';">
                         </div>
 
                         <div class="book-author-content-firstLine custom-fs-16"  >
-                            <span class="bold-text">${bootImageAndText.titleInfo}</span>
+                            <span class="bold-text">${bookImageAndText.titleInfo}</span>
                         </div>
                         
                         <div class="book-author-content-secondLine custom-fs-14 custom-text-darkGrey" >
-                            <span>${bootImageAndText.authorInfo}</span>
+                            <span>${bookImageAndText.authorInfo}</span>
                         </div>
                     
                     </div>`                

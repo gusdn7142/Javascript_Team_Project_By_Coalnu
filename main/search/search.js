@@ -56,13 +56,30 @@ const searchBook = async () => {
   const keyword = document.getElementById("search-input").value;
   url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true&v1=${keyword}&f1=title`);
   await getBookInfo();
+
 }
+
+// HTML 문자열에서 태그를 제거하고 텍스트만 추출하는 함수
+const stripHTMLTags = (htmlString) => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlString;
+  return tempDiv.textContent || tempDiv.innerText || "";
+}
+
 
 //책 정보 렌더링
 const render = () => {
-  const bookHTML = bookList.map(book =>
-    `<div class="row">
+  const bookHTML = bookList.map(book => {
+    // 책 제목에서 <span> 태그 제거
+   const cleanTitle = stripHTMLTags(book.titleInfo);
+    console.log(`Clean Title: ${cleanTitle}`); 
+    return`
+    <div class="row">
             <div class="col-lg-4">
+            <!-- 상세 링크 연결 로컬 테스트용 -->
+                <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" >
+            <!-- 상세 링크 연결 도메인(netlify) -->
+           <!-- <a href="${window.location.hostname}/main/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->  
                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
             </div>
             <div class="col-lg-8">
@@ -74,7 +91,7 @@ const render = () => {
                 }</div> -->
 
                 <div>
-                  ${book.titleInfo}
+                   ${book.titleInfo} 
                 </div>
 
                 <p>${
@@ -89,8 +106,8 @@ const render = () => {
                 }</p>
             </div>
         </div>`
-  ).join('');
-
+  }).join('');
+  //console.log(render);
   document.getElementById("book-list").innerHTML = bookHTML;
 }
 
@@ -149,3 +166,6 @@ const moveToPage = (page) => {
   pageNum = page;
   getBookInfo();
 }
+
+
+
