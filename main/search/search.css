@@ -1,8 +1,3 @@
-.main-container {
-  width: 1140px;
-  margin: auto;
-}
-
 .main-top-inputArea input {
   width: 600px;
   height: 60px;
@@ -22,6 +17,14 @@
   justify-content: center;
   margin-top: 200px;
   margin-bottom: 200px;
+}
+
+.main-mid-bookList {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); 
+  gap: 48px; 
+  max-width: 1140px; 
+  margin: 32px auto;
 }
 
 .main-bottom-pagination {

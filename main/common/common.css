@@ -14,6 +14,12 @@ body {
   font-family: 'Spoqa Han Sans Neo', 'sans-serif' !important;
 }
 
+.main-container{
+  max-width: 1140px;
+  min-width: 300px;
+  margin: auto; 
+}
+
 ul,li,ol {
 	list-style: none;
 }
@@ -227,6 +233,11 @@ a {
 }
 
 @media screen and (max-width: 1023px) { 
+  .main-container{
+    max-width: 720px;
+    margin: auto;
+  }
+  
   .responsive-fs-20 {
     font-size: 20px;
   }
@@ -243,9 +254,18 @@ a {
     margin-top: 8px;
   }
 
+  .responsive-mg-bottom-16 {
+    margin-bottom: 16px;
+  }
+
 }
 
 @media screen and (max-width: 767px) { 
+  .main-container{
+    max-width: 360px;
+    margin: auto;
+  }
+  
   .responsive-fs-12 {
     font-size: 12px;
   }
