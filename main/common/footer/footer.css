@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer {
   width: 100%;
   padding: 100px 150px;
@@ -34,3 +35,77 @@ footer {
   color: #999;
   font-size: small;
 }
+=======
+footer{
+    width:100%;
+    padding: 100px 150px;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+  }
+  .footer-top{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-top-leftBox-brand{
+    margin-bottom: 10px;
+    color: #000;
+  }
+  .footer-top-leftBox-info a{
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #000;
+  }
+  .footer-top-rightBox{
+    display: flex;
+  }
+  .footer-top-rightBox-aBox{
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  .footer-bottom{
+    margin-top: 20px;
+    color: #999;
+  }
+
+  @media (max-width : 1023px) {
+      .footer-top{
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer-top-rightBox{
+        display: none;
+      }
+      .footer-top-leftBox-brand{
+        display: flex;
+        justify-content: center;
+      }
+      
+      .footer-bottom{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .footer-bottom-words{
+        display: flex;
+        justify-content: center;
+        
+      }
+      
+  }
+
+  @media (max-width:767px){
+    footer{
+      padding: 100px 50px;
+    }
+      
+  }
+
+  @media (max-width:480px){
+    footer{
+      padding: 100px 30px;
+    }
+      
+  }
+>>>>>>> develop
