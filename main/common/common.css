@@ -15,7 +15,7 @@ body {
 }
 
 .main-container{
-  max-width: 1140px;
+  max-width: 80%;
   min-width: 300px;
   margin: auto; 
 }
@@ -31,7 +31,6 @@ img {
 }
 
 a {
-  color:#111111;
 	text-decoration: none;
 }
 
@@ -238,10 +237,10 @@ a {
 }
 
 @media screen and (max-width: 1023px) { 
-  .main-container{
+  /* .main-container{
     max-width: 720px;
     margin: auto;
-  }
+  } */
   
   .responsive-fs-20 {
     font-size: 20px;
@@ -262,10 +261,10 @@ a {
 }
 
 @media screen and (max-width: 767px) { 
-  .main-container{
-    max-width: 360px;
-    margin: auto;
-  }
+  /* .main-container{
+    /* max-width: 360px; */
+    /* margin: auto;
+  } */ */
 
   .responsive-mg-top-12 {
     margin-top: 12px;
