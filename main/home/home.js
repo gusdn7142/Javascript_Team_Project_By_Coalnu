@@ -137,7 +137,7 @@ const getBookByNavTag = async (event) => {
 
     return `<div  class="book-ImageAndText-one" >                           
             <div class="book-image  custom-mg-bottom-8" >      
-                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../detail/image/boot_null_image.jpg';">
+                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
             </div>
 
             <div class="book-text-firstLine custom-fs-20"  >
@@ -244,7 +244,7 @@ const getBookByCategory = async (event) => {
     
     return `<div  class="book-ImageAndText-one" >                           
             <div class="book-image  custom-mg-bottom-8" >      
-                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../detail/image/boot_null_image.jpg';">
+                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
             </div>
 
             <div class="book-text-firstLine custom-fs-20"  >

@@ -1,8 +1,6 @@
 /*
 * main 부분
 */
-
-
 .main-carousel-container{
     width: 800px;
     margin: auto; 
@@ -180,6 +178,10 @@
 
 
 @media screen and (max-width: 1023px) { 
+    .main-container {
+        margin-top: 40px;
+    }
+    
     .main-carousel-container {
         width: 600px;
         margin: auto;
