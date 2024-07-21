@@ -11,8 +11,6 @@ userInput.addEventListener("keyup", (event) => {
   }
 })
 
-
-
 //api주소 설정
 let url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true`);
 
@@ -74,10 +72,6 @@ const hideDefaultMessage = () => {
 
 //렌더링
 const render = () => {
-  if (bookList.length === 0) {
-    showDefaultMessage();
-    return;
-  }
 
   hideDefaultMessage();
  
@@ -88,30 +82,60 @@ const render = () => {
   
   const totalResultsHTML =`  
     <div>
-      <span class="custom-fs-24 bold-text custom-text-darkRed">"${keyword}"</span>으로 총 ${total}개의 검색 결과가 나왔습니다.
+      <span class="custom-fs-24 bold-text custom-text-darkRed">"${keyword}"</span>(으)로 총 ${total}개의 검색 결과가 나왔습니다.
     </div>
   `;
 
-  const bookItemsHTML = displayedBooks.map(book => `  
-    <div class="book-ImageAndText-one">
-      <div class="custom-mg-bottom-8">
-        <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
-      </div>
+  const bookItemsHTML = displayedBooks.map(book => {
+    let bookTitle = '';
+    let bookAuthor = '';
+    let bookShowTitle = '';
+    let bookShowAuthor = '';
+    let bookPubInfo = '';
+    let bookShowPubInfo = '';
 
-      <div class="custom-fs-20 bold-text">
-        ${book.titleInfo.length > 10 ? book.titleInfo.substring(0, 10) + "..." : book.titleInfo}
-      </div>
+    if (book.titleInfo == '') {
+      bookTitle = '무제';
+    } else {
+      bookShowTitle = stripHTMLTags(book.titleInfo);
+      bookTitle = bookShowTitle.length > 10 ? bookShowTitle.slice(0, 10) + '...' : bookShowTitle;
+    }
 
-      <div class="custom-fs-16 custom-text-darkGrey">
-        ${book.authorInfo == null || book.authorInfo == "" ? "작가 없음" : book.authorInfo.length > 5 ? book.authorInfo.substring(0, 5) + "..." : book.authorInfo},
-        ${book.pubInfo == null || book.pubInfo == "" ? "출판사 없음" : book.pubInfo.length > 5 ? book.pubInfo.substring(0, 5) + "..." : book.pubInfo}
-      </div>                
-      
-    </div>
-  `).join('');
+    if (book.authorInfo == '') {
+      bookAuthor = '작자 미상';
+    } else {
+      bookShowAuthor = stripHTMLTags(book.authorInfo);
+      bookAuthor = bookShowAuthor.length > 5 ? bookShowAuthor.slice(0, 5) + '...' : bookShowAuthor;
+    }
+
+    if (book.pubInfo == '') {
+      bookShowPubInfo = '출판사 미상';
+    } else {
+      bookShowPubInfo = stripHTMLTags(book.pubInfo);
+      bookPubInfo = bookShowPubInfo.length > 5 ? bookShowPubInfo.slice(0, 5) + '...' : bookShowPubInfo;
+    }
+
+    return `  
+      <div class="book-ImageAndText-one">
+        <div class="custom-mg-bottom-8">
+          <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
+        </div>
+
+        <div class="custom-fs-20 bold-text" title="${bookShowTitle}">
+          ${bookTitle}
+        </div>
+
+        <div class="custom-fs-16 custom-text-darkGrey" title="${bookShowAuthor+ bookShowPubInfo}">
+          ${bookAuthor} , ${bookPubInfo}
+        </div>                
+      </div>
+    `;
+  }).join('');
+
 
   document.getElementById("totalBooks-message").innerHTML = totalResultsHTML;
   document.getElementById("book-list").innerHTML = bookItemsHTML;
+
 }
 
 
@@ -170,3 +194,13 @@ const moveToPage = (page) => {
   pageNum = page;
   getBookInfo();
 }
+
+//태그 없이 문자만 가져오는 함수
+const stripHTMLTags = (htmlString) => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlString;
+  return tempDiv.textContent || tempDiv.innerText || "";
+}
+
+showDefaultMessage();
+

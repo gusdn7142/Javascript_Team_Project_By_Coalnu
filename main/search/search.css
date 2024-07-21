@@ -15,6 +15,7 @@
 .main-mid-inputInfo {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 200px;
   margin-bottom: 200px;
 }
@@ -43,8 +44,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #111111;
 }
 
@@ -75,18 +76,27 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-    .main-bottom-pagination-num {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        margin-left: 4px;
-        margin-right: 4px;
-    }
-    
-    .main-top-inputArea input {
-      width: 550px;
-    }
-    
+  .main-bottom-pagination-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      margin-left: 4px;
+      margin-right: 4px;
+  }
+
+  .main-bottom-pagination-link a {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .main-container{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .main-top-inputArea input {
+    width: 550px;
+  }
 }
 
 @media (max-width:480px){
