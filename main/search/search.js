@@ -180,7 +180,7 @@ const render = () => {
       <div class="book-ImageAndText-one">
         <div class="custom-mg-bottom-8">
           <a href="../detail/detail.html?titleKeyword=${bookShowTitle}&authorKeyword=${bookShowAuthor}" >
-            <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
+            <img src="http://cover.nl.go.kr/${book.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
           </a>
         </div>
 
