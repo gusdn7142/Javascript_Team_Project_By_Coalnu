@@ -155,7 +155,7 @@ const getBookListByAuthor = async () => {
         }else{
           bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
           //console.log("bootShowTitle:"+bootShowTitle)
-          bootTitle = bootShowTitle.slice(0, 5) + '...';
+          bootTitle = bootShowTitle.slice(0, 10) + '...';
           //console.log("bootTitle : "+ bootTitle)
         }
 
@@ -164,7 +164,7 @@ const getBookListByAuthor = async () => {
           bootAuthor = '작자미상';
         }else {
           bootShowAuthor = stripHTMLTags(bootImageAndText.authorInfo);
-          bootAuthor = bootShowAuthor.slice(0, 5) + '...';
+          bootAuthor = bootShowAuthor.slice(0, 10) + '...';
         }
 
         
@@ -175,11 +175,11 @@ const getBookListByAuthor = async () => {
                         </div>
 
                         <div class="book-author-content-firstLine custom-fs-16"  >
-                            <span class="bold-text">${bootImageAndText.titleInfo}</span>
+                            <span class="bold-text">${bootTitle}</span>
                         </div>
                         
                         <div class="book-author-content-secondLine custom-fs-14 custom-text-darkGrey" >
-                            <span>${bootImageAndText.authorInfo}</span>
+                            <span>${bootAuthor}</span>
                         </div>
                     
                     </div>`                
