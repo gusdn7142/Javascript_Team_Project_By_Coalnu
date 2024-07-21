@@ -1,14 +1,10 @@
 /*
 * main 부분
 */
-
-
 .main-carousel-container{
     width: 800px;
     margin: auto; 
 }
-
-
 
 /*
 * carousel 부분
@@ -54,10 +50,11 @@
 /*
 * categorys 부분
 */
-/* .categorys {
-    width: 1140px; 
+.categorys {
+    /* width: 1140px;  */
     margin: 74px auto 0 auto;
-} */
+} 
+
 
 .categorys-title {
     display: flex;
@@ -154,8 +151,9 @@
 .dropdown-button{
     background-color: white;
     border-radius: 30px;
-    padding-left: 15px;
-    width:100px;
+    padding: 5px 10px;
+    width:80px;
+    border: 1px solid #000;
 }
 
 /*
@@ -180,6 +178,10 @@
 
 
 @media screen and (max-width: 1023px) { 
+    .main-container {
+        margin-top: 40px;
+    }
+    
     .main-carousel-container {
         width: 600px;
         margin: auto;
@@ -197,10 +199,11 @@
     .nav-item{
         display: contents;
     }
-    /* .categorys {
-        width: 1010px; 
+
+    .categorys {
         padding: 0 50px;
-    } */
+    } 
+
     .categorys-title {
         display: flex;
         justify-content: space-between;

@@ -40,20 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadHTML('nav', '../common/nav/nav.html', function() {
         console.log('nav loaded');
-        setupNavEventListeners();
-        // if (typeof setupNavEventListeners === 'function') {
-        //     setupNavEventListeners();
-        // } else {
-        //     console.error('setupNavEventListeners is not defined');
-        // }
+        // setupNavEventListeners();
+        if (typeof setupNavEventListeners === 'function') {
+            setupNavEventListeners();
+            console.log('setupNavEventListeners is defined');
+        } else {
+            console.log('setupNavEventListeners is not defined');
+        }
     
     });
     loadHTML('footer', '../common/footer/footer.html', function() {
         console.log('footer loaded');
     });
 });
-
-
-
-
-
