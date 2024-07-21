@@ -42,6 +42,9 @@ let pageNum = 1;
 let pageSize = 4;  
 
 
+//1-7) 기타 요소 선언
+let searchIconButton = '';           //검색 돋보기 아이콘 버튼 태그
+
 
 /*
  * 2. Event 선언
@@ -57,6 +60,25 @@ rightArrow.onclick = async ()  => {
   pageNum++;
   await getBookListByAuthor()
 };  
+
+
+//2-3) 검색 Button Click Event 
+document.addEventListener("DOMContentLoaded", function () {
+  function setupNavEventListeners() {
+
+      //2-3) 검색 돋보기 아이콘 클릭 이벤트 추가
+      searchIconButton = document.getElementById('searchIconButton');
+
+      //2-4) 검색 돋보기 Button Click Event 선언
+      searchIconButton.addEventListener('click', function() {
+          window.location.href = '../search/search.html';           //search 페이지로 이동
+      });
+  }
+
+  //2-3) common.js의 setupNavEventListeners() 메서드를 Global로 사용할수 있게 설정
+  window.setupNavEventListeners = setupNavEventListeners;  
+});
+
 
 
 
