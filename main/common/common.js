@@ -53,8 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('footer loaded');
     });
 });
-
-
-
-
-

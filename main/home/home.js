@@ -19,6 +19,7 @@
 //1-1) 기본 변수 선언
 let navTags = '';                                                       //'대분류' nav의 a 태그들 
 let searchIconButton = '';                                            //검색 돋보기 아이콘 버튼 태그
+
 let categorys = document.querySelectorAll('.categorys-btn')          //category의 button 태그들              
 let bookTotalCount = document.getElementById("book-total-count");  
 let currentNavTagName = '';                                          //현재 '대분류' a태그명
@@ -69,9 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //2-3) common.js의 setupNavEventListeners() 메서드를 Global로 사용할수 있게 설정
     window.setupNavEventListeners = setupNavEventListeners;  
 });
-
-
-
 
 
 /*
@@ -147,9 +145,12 @@ const getBookByNavTag = async (event) => {
     }
     
 
-    return `<div  class="book-ImageAndText-one" >                           
-            <div class="book-image  custom-mg-bottom-8" >      
-                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
+    return `<div  class="book-ImageAndText-one" >          
+
+            <div class="book-image  custom-mg-bottom-8" > 
+                <a href="../detail/detail.html?titleKeyword=${bootImageAndText.titleInfo}&authorKeyword=${bootImageAndText.authorInfo}" >   
+                    <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
+                </a>
             </div>
 
             <div class="book-text-firstLine custom-fs-20"  >
@@ -167,7 +168,7 @@ const getBookByNavTag = async (event) => {
     document.getElementById("book-ImageAndText-List").innerHTML = imageAndTextHTML;
 }
 
-
+{/* <a href="../detail/detail.html?titleKeyword=${bootImageAndText.titleInfo}&authorKeyword=${bootImageAndText.authorInfo}" >    */}
 
 
 /*
@@ -176,6 +177,8 @@ const getBookByNavTag = async (event) => {
 const getBookByCategory = async (event) => {
 
 
+    console.log("currentNavTagName : ", currentNavTagName);
+
     //5-1) 카테고리명 조회
     const categoryName = event.target.textContent;
     console.log("categoryName ; " + categoryName);
@@ -183,11 +186,11 @@ const getBookByCategory = async (event) => {
     let url = '';
     if(categoryName === '전체') {        //이슈 : URL에 category=currentNavTagName 를 넣을수 있는 방법을 찾아야 함.        
         url = new URL(`
-            https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&pageNum=${pageNum}&pageSize=${pageSize}       
-        `);     //$category=${currentNavTagName}  
+            https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}       
+        `);     //$category=${currentNavTagName}      
     } else {                            
         url = new URL(`
-            https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&v1=${categoryName}&f1=keyword&pageNum=${pageNum}&pageSize=${pageSize}     
+            https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&v1=${categoryName}&f1=keyword&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}       
         `);   //$category=${currentNavTagName}    
     } 
 
@@ -256,7 +259,9 @@ const getBookByCategory = async (event) => {
     
     return `<div  class="book-ImageAndText-one" >                           
             <div class="book-image  custom-mg-bottom-8" >      
-                <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
+                <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" >    
+                    <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
+                </a>
             </div>
 
             <div class="book-text-firstLine custom-fs-20"  >
@@ -274,6 +279,8 @@ const getBookByCategory = async (event) => {
     document.getElementById("book-ImageAndText-List").innerHTML = imageAndTextHTML;
 }
 
+
+{/* <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" ></a> */}
 
 
 
@@ -298,19 +305,27 @@ const stripHTMLTags = (htmlString) => {
 }
 
 
+// kks: 로컬 및 도메인 URL에서 바로가기 버튼 클릭 이벤트 추가
+document.addEventListener('DOMContentLoaded', function() {
+  const baseUrl = 'https://munheon-garden.netlify.app/detail/detail.html';
+  
+  // kks: 각 버튼 요소를 가져옴
+  const firstBookButton = document.getElementById('firstBookButton');
+  const secondBookButton = document.getElementById('secondBookButton');
+  const thirdBookButton = document.getElementById('thirdBookButton');
 
+  // kks: 버튼 클릭 시 이동할 URL을 설정하는 함수
+  function setButtonClickListener(button, title, author) {
+    button.addEventListener('click', function() {
+      window.location.href = `${baseUrl}?titleKeyword=${title}&authorKeyword=${author}`;
+    });
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  // kks: 각 버튼에 클릭 이벤트를 추가합니다
+  setButtonClickListener(firstBookButton, '나의 문학 답사 일지', '정병설');
+  setButtonClickListener(secondBookButton, '시절과 기분', '김봉곤');
+  setButtonClickListener(thirdBookButton, '당일치기 조선여행 : 한양과 경성, 두 개의 조선을 걷는 시간', '트래블레이블,이용규,김혜정,장보미,최윤정');
+});
 
 
 

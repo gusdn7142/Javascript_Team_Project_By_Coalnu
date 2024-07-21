@@ -1,5 +1,5 @@
 //변수 설정
-const apikey = config.apikey; //api_key
+const apikey = "76faa9053c59326364cd62f1f1375e2d77db3e92ae9879832c4d569414929619"; //config.apikey; //api_key
 let bookList = [];
 let userInput = document.getElementById("search-input");
 let keyword = "";
@@ -55,6 +55,7 @@ const searchBook = async () => {
   keyword = document.getElementById("search-input").value;
   url = new URL(`https://www.nl.go.kr/NL/search/openApi/search.do?key=${apikey}&apiType=json&detailSearch=true&v1=${keyword}&f1=title`);
   await getBookInfo();
+
 }
 
 
@@ -64,11 +65,70 @@ const showDefaultMessage = () => {
   document.getElementById("book-list").style.display = 'none';
 }
 
+
+// HTML 문자열에서 태그를 제거하고 텍스트만 추출하는 함수
+const stripHTMLTags = (htmlString) => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlString;
+  return tempDiv.textContent || tempDiv.innerText || "";
+}
+
+
+
+//책 정보 렌더링
+// const render = () => {
+//   const bookHTML = bookList.map(book => {
+//     // 책 제목에서 <span> 태그 제거
+//    const cleanTitle = stripHTMLTags(book.titleInfo);
+  
+//     console.log(`Clean Title: ${cleanTitle}`); 
+//     return`
+//     <div class="row">
+//             <div class="col-lg-4">
+//             <!-- 상세 링크 연결 로컬 테스트용 -->
+//              <!--   <a href="${window.location.origin}titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->
+//             <!-- 상세 링크 연결 도메인(netlify) -->
+//             <a href="https://munheon-garden.netlify.app/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > 
+//                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>
+//             </div>
+//             <div class="col-lg-8">
+
+//                 <!-- <div>${
+//                   book.titleInfo == null || book.titleInfo == "" ? "제목 없음"
+//                   : book.titleInfo.length > 10 ? book.titleInfo.substring(0, 10) + "..."
+//                   : book.titleInfo
+//                 }</div> -->
+
+//                 <div>
+//                    ${book.titleInfo} 
+//                 </div>
+
+//                 <p>${
+//                   book.authorInfo == null || book.authorInfo == "" ? "작가 없음"
+//                   : book.authorInfo.length > 5 ? book.authorInfo.substring(0, 5) + "..."
+//                   : book.authorInfo
+//                 }</p>,
+//                 <p>${
+//                   book.pubInfo == null || book.pubInfo == "" ? "출판사 없음"
+//                   : book.pubInfo.length > 5 ? book.pubInfo.substring(0, 5) + "..."
+//                   : book.pubInfo
+//                 }</p>
+//             </div>
+//         </div>`
+//   }).join('');
+//   //console.log(render);
+//   document.getElementById("book-list").innerHTML = bookHTML;
+// }
+
+
+
 //검색페이지 기본 메세지 숨기기
 const hideDefaultMessage = () => {
   document.getElementById("default-message").style.display = 'none';
   document.getElementById("book-list").style.display = 'grid';
 }
+
+
 
 //렌더링
 const render = () => {
@@ -85,6 +145,7 @@ const render = () => {
       <span class="custom-fs-24 bold-text custom-text-darkRed">"${keyword}"</span>(으)로 총 ${total}개의 검색 결과가 나왔습니다.
     </div>
   `;
+  
 
   const bookItemsHTML = displayedBooks.map(book => {
     let bookTitle = '';
@@ -118,7 +179,9 @@ const render = () => {
     return `  
       <div class="book-ImageAndText-one">
         <div class="custom-mg-bottom-8">
-          <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
+          <a href="../detail/detail.html?titleKeyword=${bookShowTitle}&authorKeyword=${bookShowAuthor}" >
+            <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
+          </a>
         </div>
 
         <div class="custom-fs-20 bold-text" title="${bookShowTitle}">
@@ -195,12 +258,8 @@ const moveToPage = (page) => {
   getBookInfo();
 }
 
-//태그 없이 문자만 가져오는 함수
-const stripHTMLTags = (htmlString) => {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = htmlString;
-  return tempDiv.textContent || tempDiv.innerText || "";
-}
-
 showDefaultMessage();
+
+
+
 
