@@ -89,10 +89,10 @@ img {
     margin-right: 6px;
   }
 
-  .main-container{
-    display: flex;
-    justify-content: space-around;
-  }
+  /* .main-container{ */
+    /* display: flex; */
+    /* justify-content: space-around; */
+  /* } */
   
   .main-top-inputArea input {
     width: 550px;

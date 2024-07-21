@@ -55,6 +55,7 @@
     margin: 74px auto 0 auto;
 } 
 
+
 .categorys-title {
     display: flex;
     justify-content: space-between;
@@ -198,9 +199,11 @@
     .nav-item{
         display: contents;
     }
+
     .categorys {
         padding: 0 50px;
     } 
+
     .categorys-title {
         display: flex;
         justify-content: space-between;
