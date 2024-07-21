@@ -151,6 +151,7 @@ const getBookListByAuthor = async () => {
     //4-1) 도서 상세 검색 API 호출    
     const response = await fetch(`${bootAPIDomain}?key=${apiKey}&apiType=json&detailSearch=true&f1=author&v1=${authorKeyword}&pageNum=${pageNum}&pageSize=${pageSize}`);
     const bookDataList = await response.json();
+    console.log(bookDataList)
 
     //4-2) 데이터 Null 체크
     if(bookDataList.total === 0) {
@@ -177,7 +178,7 @@ const getBookListByAuthor = async () => {
         }else{
           bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
           //console.log("bootShowTitle:"+bootShowTitle)
-          bootTitle = bootShowTitle.slice(0, 5) + '...';
+          bootTitle = bootShowTitle.slice(0, 10) + '...';
           //console.log("bootTitle : "+ bootTitle)
         }
 
@@ -186,7 +187,7 @@ const getBookListByAuthor = async () => {
           bootAuthor = '작자미상';
         }else {
           bootShowAuthor = stripHTMLTags(bootImageAndText.authorInfo);
-          bootAuthor = bootShowAuthor.slice(0, 5) + '...';
+          bootAuthor = bootShowAuthor.slice(0, 10) + '...';
         }
 
         
@@ -197,11 +198,11 @@ const getBookListByAuthor = async () => {
                         </div>
 
                         <div class="book-author-content-firstLine custom-fs-16"  >
-                            <span class="bold-text">${bootImageAndText.titleInfo}</span>
+                            <span class="bold-text"title="${bootShowTitle}" >${bootTitle}</span>
                         </div>
                         
                         <div class="book-author-content-secondLine custom-fs-14 custom-text-darkGrey" >
-                            <span>${bootImageAndText.authorInfo}</span>
+                            <span title="${bootShowAuthor}">${bootAuthor}</span>
                         </div>
                     
                     </div>`                
