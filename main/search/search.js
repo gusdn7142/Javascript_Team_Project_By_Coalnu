@@ -152,8 +152,6 @@ const render = () => {
     let bookAuthor = '';
     let bookShowTitle = '';
     let bookShowAuthor = '';
-    let bookPubInfo = '';
-    let bookShowPubInfo = '';
 
     if (book.titleInfo == '') {
       bookTitle = '무제';
@@ -166,21 +164,14 @@ const render = () => {
       bookAuthor = '작자 미상';
     } else {
       bookShowAuthor = stripHTMLTags(book.authorInfo);
-      bookAuthor = bookShowAuthor.length > 5 ? bookShowAuthor.slice(0, 5) + '...' : bookShowAuthor;
-    }
-
-    if (book.pubInfo == '') {
-      bookShowPubInfo = '출판사 미상';
-    } else {
-      bookShowPubInfo = stripHTMLTags(book.pubInfo);
-      bookPubInfo = bookShowPubInfo.length > 5 ? bookShowPubInfo.slice(0, 5) + '...' : bookShowPubInfo;
+      bookAuthor = bookShowAuthor.length > 10 ? bookShowAuthor.slice(0, 10) + '...' : bookShowAuthor;
     }
 
     return `  
       <div class="book-ImageAndText-one">
         <div class="custom-mg-bottom-8">
           <a href="../detail/detail.html?titleKeyword=${bookShowTitle}&authorKeyword=${bookShowAuthor}" >
-            <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../common/image/book-null-image.jpg'}"/>
+            <img src="http://cover.nl.go.kr/${book.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
           </a>
         </div>
 
@@ -188,8 +179,8 @@ const render = () => {
           ${bookTitle}
         </div>
 
-        <div class="custom-fs-16 custom-text-darkGrey" title="${bookShowAuthor+ bookShowPubInfo}">
-          ${bookAuthor} , ${bookPubInfo}
+        <div class="custom-fs-16 custom-text-darkGrey" title="${bookShowAuthor}">
+          ${bookAuthor}
         </div>                
       </div>
     `;
