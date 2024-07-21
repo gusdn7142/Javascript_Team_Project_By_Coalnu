@@ -196,10 +196,9 @@
     .nav-item{
         display: contents;
     }
-    /* .categorys {
-        width: 1010px; 
+    .categorys {
         padding: 0 50px;
-    } */
+    } 
     .categorys-title {
         display: flex;
         justify-content: space-between;

@@ -166,6 +166,30 @@ const getBookListByAuthor = async () => {
     //4-4) View 렌더링
     const imageAndTextHTML = bootImageAndTextList.map(
       (bootImageAndText) => {
+
+        let bootTitle = '';
+        let bootAuthor = '';
+        let bootShowTitle = '';
+        let bootShowAuthor = '';
+
+        if(bootImageAndText.titleInfo == ''){
+          bootTitle = '제목없음'
+        }else{
+          bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
+          //console.log("bootShowTitle:"+bootShowTitle)
+          bootTitle = bootShowTitle.slice(0, 5) + '...';
+          //console.log("bootTitle : "+ bootTitle)
+        }
+
+
+        if(bootImageAndText.authorInfo == ''){
+          bootAuthor = '작자미상';
+        }else {
+          bootShowAuthor = stripHTMLTags(bootImageAndText.authorInfo);
+          bootAuthor = bootShowAuthor.slice(0, 5) + '...';
+        }
+
+        
           return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
 
                         <div class="book-author-content-image  custom-mg-bottom-8 " >      
@@ -193,7 +217,11 @@ getBookListByAuthor();      //3. ‘저자 and 제목’ 조건 검색 - 단일 
 getDetailBookByKeyword();   //4. ‘저자’ 조건 검색 - 도서 List 조회 API 호출
 
 
-
+const stripHTMLTags = (htmlString) => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlString;
+  return tempDiv.textContent || tempDiv.innerText || "";
+}
 
 
 
