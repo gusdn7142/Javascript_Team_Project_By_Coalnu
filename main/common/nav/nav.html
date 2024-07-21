@@ -2,7 +2,7 @@
   <nav>
     <div class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand custom-fs-24 bold-text" href="#">문헌의 정원</a>
+        <a class="navbar-brand custom-fs-24 bold-text" href="#" id="homeLink">문헌의 정원</a> <!-- id 추가 home 이동  -->
         <div class="nav-top-link">
             <a href="">도서</a>
             <a href="">고문헌</a>
@@ -52,5 +52,13 @@ if (searchIconButton) {
     window.location.href = 'https://munheon-garden.netlify.app/search/search.html';
   });
 }
+
+    // "문헌의 정원" 클릭 이벤트 추가
+    const homeLink = document.getElementById('homeLink');
+    if (homeLink) {
+      homeLink.addEventListener('click', function() {
+        window.location.href = 'https://munheon-garden.netlify.app/home/home.html';
+      });
+    }
     </script>
 </body>

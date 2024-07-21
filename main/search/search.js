@@ -78,7 +78,7 @@ const render = () => {
     <div class="row">
             <div class="col-lg-4">
             <!-- 상세 링크 연결 로컬 테스트용 -->
-             <!--   <a href="${window.location.origin}titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->
+          <!--   <a href="${window.location.origin}/main/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > -->
             <!-- 상세 링크 연결 도메인(netlify) -->
             <a href="https://munheon-garden.netlify.app/detail/detail.html?titleKeyword=${cleanTitle}&authorKeyword=${book.authorInfo}" > 
                 <img src="${book.imageUrl ? `http://cover.nl.go.kr/${book.imageUrl}` : '../search/search noimage/noimage_NL1.jpg'}"/>

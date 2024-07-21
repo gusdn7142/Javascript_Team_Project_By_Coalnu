@@ -138,12 +138,13 @@ const getBookListByAuthor = async () => {
     }
 
     //4-3) response 값을 json 타입으로 변환
-    bookImageAndTextList = bookDataList.result;           
-
+    bookImageAndTextList = bookDataList.result; 
+    
 
     //4-4) View 렌더링
     const imageAndTextHTML = bookImageAndTextList.map(
       (bookImageAndText) => {
+
           return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
 
                         <div class="book-author-content-image  custom-mg-bottom-8" >
@@ -166,6 +167,8 @@ const getBookListByAuthor = async () => {
           }).join('');   
 
     document.getElementById("book-ImageAndText-List-By-Author").innerHTML = imageAndTextHTML;
+
+
 }
 
 
