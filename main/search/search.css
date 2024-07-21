@@ -71,10 +71,7 @@ img {
 }
 
 @media(max-width : 1023px) {
-  .main-container{
-    display: flex;
-    justify-content: center;
-  }
+  
 }
 
 @media screen and (max-width: 767px) {
@@ -85,12 +82,9 @@ img {
         margin-left: 4px;
         margin-right: 4px;
     }
-    .main-container{
-      display: flex;
-      justify-content: space-around;
-    }
+    
     .main-top-inputArea input {
-      width: 400px;
+      width: 550px;
     }
     
 }
@@ -104,10 +98,7 @@ img {
 
 @media (max-width:300px){
 
-  .main-container{
-    display: flex;
-    justify-content: start;
-  }
+  
 
   .main-top-inputArea input {
     width: 150px;
