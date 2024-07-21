@@ -172,6 +172,30 @@
 
 
 
+/*
+* animation
+*/
+@keyframes scale-up-center {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    60% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+.book-ImageAndText-one:hover {
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
 
 
 
