@@ -6,8 +6,6 @@
     margin: auto; 
 }
 
-
-
 /*
 * carousel 부분
 */
@@ -52,10 +50,10 @@
 /*
 * categorys 부분
 */
-/* .categorys {
-    width: 1140px; 
+.categorys {
+    /* width: 1140px;  */
     margin: 74px auto 0 auto;
-} */
+} 
 
 .categorys-title {
     display: flex;
@@ -152,8 +150,9 @@
 .dropdown-button{
     background-color: white;
     border-radius: 30px;
-    padding-left: 15px;
-    width:100px;
+    padding: 5px 10px;
+    width:80px;
+    border: 1px solid #000;
 }
 
 /*

@@ -17,7 +17,8 @@
  * 1. 변수 초기화  
  */
 //1-1) 기본 변수 선언
-let navTags = '';                                                    //'대분류' nav의 a 태그들 
+let navTags = '';                                                       //'대분류' nav의 a 태그들 
+let searchIconButton = '';                                            //검색 돋보기 아이콘 버튼 태그
 let categorys = document.querySelectorAll('.categorys-btn')          //category의 button 태그들              
 let bookTotalCount = document.getElementById("book-total-count");  
 let currentNavTagName = '';                                          //현재 '대분류' a태그명
@@ -42,7 +43,7 @@ let pageSize = 10;
 
 
 /*
- * 2. navbar a태그들 Click Event 
+ * 2. navbar a태그들, 검색 Button Click Event 
  */
 document.addEventListener("DOMContentLoaded", function () {
     function setupNavEventListeners() {
@@ -54,11 +55,22 @@ document.addEventListener("DOMContentLoaded", function () {
         navTags.forEach(navTag => navTag.addEventListener('click', 
             (event)=> getBookByNavTag(event))
         ); 
+
+        //2-3) 검색 돋보기 아이콘 클릭 이벤트 추가
+        searchIconButton = document.getElementById('searchIconButton');
+
+        //2-4) 검색 돋보기 Button Click Event 선언
+        searchIconButton.addEventListener('click', function() {
+            window.location.href = '../search/search.html';                //search 페이지로 이동
+            //window.location.href = 'https://munheon-garden.netlify.app/search/search.html';
+        });
     }
 
     //2-3) common.js의 setupNavEventListeners() 메서드를 Global로 사용할수 있게 설정
     window.setupNavEventListeners = setupNavEventListeners;  
 });
+
+
 
 
 

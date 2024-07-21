@@ -71,6 +71,13 @@ img {
   height: 266px;
 }
 
+@media(max-width : 1023px) {
+  .main-container{
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .main-bottom-pagination-num {
       width: 32px;
@@ -83,5 +90,34 @@ img {
   .main-bottom-pagination-link a {
     margin-left: 6px;
     margin-right: 6px;
+  }
+
+  .main-container{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .main-top-inputArea input {
+    width: 400px;
+  }
+}
+
+@media (max-width:480px){
+  .main-top-inputArea input {
+    width: 250px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width:300px){
+
+  .main-container{
+    display: flex;
+    justify-content: start;
+  }
+
+  .main-top-inputArea input {
+    width: 150px;
+    font-size: 8px;
   }
 }
