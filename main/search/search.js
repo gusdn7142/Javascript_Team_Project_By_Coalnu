@@ -35,8 +35,8 @@ const getBookInfo = async () => {
       if (data.total === 0) {   
         throw new Error("검색된 정보가 없습니다.");
       }
-      bookList = data.result;
-      total = data.total;
+      bookList = data.result || [];
+      total = data.total || 0;
       render();
       paginationRender();
     } else {
