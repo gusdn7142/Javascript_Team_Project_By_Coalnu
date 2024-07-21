@@ -6,7 +6,7 @@
   padding-right: 70px;
 }
 
-.fa-magnifying-glass {
+.searching-icon {
   position: relative;
   right: 60px;
   cursor: pointer;
@@ -114,21 +114,51 @@ img {
     width: 420px;
   }
 
-  .fa-magnifying-glass {
-    position: relative;
 
-  }
-  
 }
 
 
 @media (max-width: 767px){
   .main-top-inputArea input {
-    width: 280px;
+    width: 260px;
   }
 
+  .main-top-inputArea{
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .main-top-inputArea input {
+    font-size: 16px;
+  }
+
+  .searching-icon {
+    position: relative;
+    right: 50px;
+    top: 20px;
+  }
+
+  .main-top-title {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .totalBooks-message {
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 600px){
   .hidden-phone {
     display: none;
   }
+
+
+
+  
+
 
 }
