@@ -1,6 +1,11 @@
 /*
 * main 부분
 */
+.main-container {
+   /* margin-left: 30px;
+   margin-right: 30px; */
+}
+
 .main-carousel-container{
     width: 800px;
     margin: auto; 
@@ -52,7 +57,7 @@
 */
 .categorys {
     /* width: 1140px;  */
-    margin: 74px auto 0 auto;
+    margin-top: 74px;
 } 
 
 
@@ -303,4 +308,10 @@
         width: 450px; 
         padding: 0px
     } */
-  }
+    
+    /* .book-ImageAndText-one {
+       width: 200px !important;
+       margin: auto !important;
+    } */
+
+}
