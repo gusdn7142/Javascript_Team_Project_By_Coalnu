@@ -52,10 +52,10 @@
 /*
 * categorys 부분
 */
-/* .categorys {
-    width: 1140px; 
+.categorys {
+    /* width: 1140px;  */
     margin: 74px auto 0 auto;
-} */
+} 
 
 .categorys-title {
     display: flex;
