@@ -1,7 +1,10 @@
 /*
 * main 부분
 */
-
+.main-container {
+   /* margin-left: 30px;
+   margin-right: 30px; */
+}
 
 .main-carousel-container{
     width: 800px;
@@ -52,10 +55,11 @@
 /*
 * categorys 부분
 */
-/* .categorys {
-    width: 1140px; 
-    margin: 74px auto 0 auto;
-} */
+.categorys {
+    /* width: 1140px;  */
+    margin-top: 74px;
+} 
+
 
 .categorys-title {
     display: flex;
@@ -173,12 +177,40 @@
 
 
 
+/*
+* animation
+*/
+@keyframes scale-up-center {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    60% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+.book-ImageAndText-one:hover {
+	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
 
 
 
 
 
 @media screen and (max-width: 1023px) { 
+    .main-container {
+        margin-top: 40px;
+    }
+    
     .main-carousel-container {
         width: 600px;
         margin: auto;
@@ -196,9 +228,11 @@
     .nav-item{
         display: contents;
     }
+
     .categorys {
         padding: 0 50px;
     } 
+
     .categorys-title {
         display: flex;
         justify-content: space-between;
@@ -274,4 +308,10 @@
         width: 450px; 
         padding: 0px
     } */
-  }
+    
+    /* .book-ImageAndText-one {
+       width: 200px !important;
+       margin: auto !important;
+    } */
+
+}

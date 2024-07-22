@@ -17,7 +17,7 @@
     
     <div id="nav"></div>
     
-    <div class="main-container"> 
+    <div class="main-container custom-mg-top-60"> 
         <div class="main-carousel-container">
             <div id="carouselExampleDark" class="carousel carousel-dark slide">
                 <div class="carousel-inner">
@@ -28,7 +28,7 @@
                     <div class="main-top-carousel-text">
                       <h5 class="custom-fs-24 bold-text">나의 문학 답사 일지</h5>
                       <p class="custom-fs-20 custom-mg-bottom-60 responsive-mg-bottom-16 hidden-phone">배움을 찾아 떠난 국문학자의 여행</p>
-                      <button class="main-top-carousel-shareButton responsive-mg-top-12">
+                      <button class="main-top-carousel-shareButton responsive-mg-top-12" id="firstBookButton"> <!--버튼 id detail 페이지 이동 -->
                         <span class="custom-fs-16 bold-text custom-text-white">바로가기</span> <i class="fa-solid fa-arrow-up-right-from-square main-top-carousel-shareButton-icon"></i>
                       </button>
                     </div>
@@ -40,7 +40,7 @@
                     <div class="main-top-carousel-text responsive-top-carousel-text">
                       <h5 class="custom-fs-24 bold-text">시절과 기분</h5>
                       <p class="custom-fs-20 custom-mg-bottom-60 responsive-mg-bottom-16 hidden-phone">한국문학이 기다린 새로운 사랑 소설</p>
-                      <button class="main-top-carousel-shareButton responsive-mg-top-12">
+                      <button class="main-top-carousel-shareButton responsive-mg-top-12" id="secondBookButton"> <!--버튼 id detail 페이지 이동 -->
                         <span class="custom-fs-16 bold-text custom-text-white">바로가기</span> <i class="fa-solid fa-arrow-up-right-from-square main-top-carousel-shareButton-icon"></i>
                       </button>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="main-top-carousel-text">
                       <h5 class="custom-fs-24 bold-text">당일치기 조선여행</h5>
                       <p class="custom-fs-20 custom-mg-bottom-60 responsive-mg-bottom-16 hidden-phone">가이드와 떠나는 조선시대 시간여행</p>
-                      <button class="main-top-carousel-shareButton responsive-mg-top-12">
+                      <button class="main-top-carousel-shareButton responsive-mg-top-12" id="thirdBookButton"> <!--버튼 id detail 페이지 이동 -->
                         <span class="custom-fs-16 bold-text custom-text-white">바로가기</span> <i class="fa-solid fa-arrow-up-right-from-square main-top-carousel-shareButton-icon"></i>
                       </button>
                     </div>
@@ -69,10 +69,9 @@
               </div>
         </div>
 
-
-
         <div class="categorys">
-            <div class="categorys-title custom-fs-24 bold-text">
+
+            <div class="categorys-title custom-fs-24 bold-text custom-mg-bottom-32">
                 카테고리별 도서
                 <li class="nav-item dropdown">
                     <a class="dropdown-button nav-link dropdown-toggle medium-text custom-fs-16" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">전체</a>
@@ -112,19 +111,19 @@
     
 
         <div class="additional-text  custom-mg-top-24">  
-              <div class="additional-text-leftLine">
-                <span class="custom-text-darkGrey"> 총 </span> <span>
-                <span id="book-total-count" class="custom-text-darkRed">  </span>  <!-- 40,000,000개 -->
-              </div>         
+          <div class="additional-text-leftLine">
+            <span class="custom-text-darkGrey"> 총 </span> <span>
+            <span id="book-total-count" class="custom-text-darkRed">  </span>  <!-- 40,000,000개 -->
+          </div>         
               
-              <div class="additional-text-rightLine">
-                <img src="image/orderReg.png">
-                <span class="custom-text-darkGrey"> 등록일순 </span>
-              </div>  
-            </div>
+          <div class="additional-text-rightLine">
+            <img src="image/orderReg.png">
+            <span class="custom-text-darkGrey"> 등록일순 </span>
+          </div>  
+        </div>
 
             <!-- ImageText Box List 부분 -->  
-            <div id="book-ImageAndText-List" class="book-ImageAndText-List"  >
+        <div id="book-ImageAndText-List" class="book-ImageAndText-List"  >
 
               <!-- ImageText Box One 부분 -->
               <!-- <div  class="book-ImageAndText-one" >                           
@@ -141,19 +140,19 @@
                       <span> 정병설 지음, 문학동네 </span>
                   </div>
               </div>   -->
-            </div>
+        </div>
 
 
-            <div class="see-more custom-fs-16">
-              <a href="#"> 
-                <span>더보기&nbsp&nbsp&nbsp</span>  
-                <img src="image/Vector-right.png">
-              </a>
-            </div>
+        <div class="see-more custom-fs-16">
+          <a href="#"> 
+            <span>더보기&nbsp&nbsp&nbsp</span>  
+            <img src="image/Vector-right.png">
+          </a>
+        </div>
 
         <br>
         <br>
-      </div>
+    </div>
 
    
     <div id="footer"></div>

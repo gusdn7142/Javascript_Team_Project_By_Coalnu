@@ -6,7 +6,7 @@
   padding-right: 70px;
 }
 
-.fa-magnifying-glass {
+.searching-icon {
   position: relative;
   right: 60px;
   cursor: pointer;
@@ -15,6 +15,7 @@
 .main-mid-inputInfo {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 200px;
   margin-bottom: 200px;
 }
@@ -43,8 +44,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #111111;
 }
 
@@ -70,39 +71,102 @@ img {
   height: 266px;
 }
 
-@media(max-width : 1023px) {
-  
+
+
+
+/*
+* animation
+*/
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+
+  }
 }
 
-@media screen and (max-width: 767px) {
-    .main-bottom-pagination-num {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        margin-left: 4px;
-        margin-right: 4px;
-    }
-    
-    .main-top-inputArea input {
-      width: 550px;
-    }
-    
-    
+.book-ImageAndText-one:hover {
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+
+
+@media screen and (max-width: 1023px) {
+  .main-bottom-pagination-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .main-bottom-pagination-link a {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .main-top-inputArea input {
+    width: 420px;
+  }
+
+
+}
+
+
+@media (max-width: 767px){
+  .main-bottom-pagination-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.main-top-inputArea input {
+  width: 550px;
+  font-size: 16px;
+}
+
+  .main-top-inputArea{
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .searching-icon {
+    position: relative;
+    right: 50px;
+    top: 20px;
+  }
+
+  .main-top-title {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .totalBooks-message {
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 600px){
+  .hidden-phone {
+    display: none;
+  }
 
 @media (max-width:480px){
-  .main-top-inputArea input {
-    width: 250px;
-    font-size: 10px;
-  }
-}
+    .main-top-inputArea input {
+      width: 250px;
+      font-size: 10px;}}
 
-@media (max-width:300px){
-
-  
-
-  .main-top-inputArea input {
-    width: 150px;
-    font-size: 8px;
-  }
 }

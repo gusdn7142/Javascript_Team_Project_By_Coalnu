@@ -16,23 +16,26 @@
   <div id="nav"></div>
 
   <div class="main-container">
-    <div class="custom-fs-40 bold-text custom-mg-top-60">검색</div>
+    <div class="custom-fs-40 bold-text custom-mg-top-60 main-top-title">검색</div>
     
     <!-- inputArea -->
-    <div class="main-top-inputArea custom-mg-bottom-24 custom-mg-top-24">
+    <div class="main-top-inputArea custom-mg-bottom-32 custom-mg-top-24">
       <input type="text" id="search-input" class="custom-fs-20" placeholder="도서 제목을 입력하세요">
-      <i class="fa-solid fa-magnifying-glass" onclick="searchBook()"></i>
+      <i class="fa-solid fa-magnifying-glass searching-icon" onclick="searchBook()"></i>
     </div>
-  
-    <!-- bookList -->
+
+    <!-- defaultMessage -->
     <div id="default-message" class="main-mid-inputInfo custom-fs-20 medium-text" role="alert">
-      검색 결과가 없습니다. 검색어를 입력해주세요.
+      <span>검색 결과가 없습니다.</span> 
+      <span class="hidden-phone">검색어를 입력해주세요.</span>
     </div>
 
-    <div id="totalBooks-message">
+    <!-- resultMessage -->
+    <div id="totalBooks-message" class="totalBooks-message">
 
     </div>
-
+    
+    <!-- bookList -->
     <div id="book-list" class="main-mid-bookList custom-mg-top-60">
         
     </div>
