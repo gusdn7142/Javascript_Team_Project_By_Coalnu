@@ -104,7 +104,7 @@
   <summary> Class Naming </summary>
   <div markdown="1">
     
-  ```  
+  ```html  
       <div class="main-container">
           <div class="categorys>
               <div class="categorys-title>
@@ -279,7 +279,7 @@
   <summary> Class Naming </summary>
   <div markdown="1">
     
-  ```  
+  ```html  
       <div class="book-detail">
           <div class="aside>
           <div class="section>
@@ -394,7 +394,7 @@
   <summary> Class Naming </summary>
   <div markdown="1">
     
-  ```  
+  ```html  
      <div class="book-author">
           <div class="book-author-title >
           <div class="book-author-content>
