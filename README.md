@@ -41,7 +41,7 @@
 
 
 ## 🛠 사용 기술
-  <img src="https://github.com/user-attachments/assets/06e079a7-72dd-4509-800c-080b506170e9" style="width:500px; height:300px;" alt="Example Image">
+  <img src="https://github.com/user-attachments/assets/5d82f8ff-eadf-4579-b1e4-ae4a1b421d2b" style="width:500px; height:300px;" alt="Example Image">
 
 
 <br>
@@ -52,16 +52,18 @@
   <summary> 1. Book 메인 카테고리 페이지 </summary>
   <div markdown="1">
     <br>
-    <img src="https://github.com/user-attachments/assets/feefb3ed-170d-4285-a966-6496d6faec2b" style="width:1012px; height:1060px;" alt="Example Image">
+    <img src="https://github.com/user-attachments/assets/4ed2491c-e94c-4bae-93f8-47d58a157cc4" style="width:1012px; height:1060px;" alt="Example Image">
   </div>
 </details>
+
+
 
 
 <details>
   <summary> 2. Book 검색 페이지 </summary>
   <div markdown="1">
     <br>    
-    <img src="https://github.com/user-attachments/assets/bb97f592-4af7-4f57-9f2b-ae3779d7aceb" style="width:1012px; height:827px;" alt="Example Image">
+    <img src="https://github.com/user-attachments/assets/09653454-b69b-4db4-acbe-71446bf22beb" style="width:1012px; height:827px;" alt="Example Image">
   </div>
 </details>
 
@@ -72,9 +74,11 @@
   <summary> 3. Book 상세 페이지 </summary>
   <div markdown="1">
     <br>    
-    <img src="https://github.com/user-attachments/assets/7cdca8a0-fdec-4be6-ac3b-e949db301c2e" style="width:1012px; height:657px;" alt="Example Image">
+    <img src="https://github.com/user-attachments/assets/5998b437-82b3-453d-87ea-d75d8273f570" style="width:1012px; height:657px;" alt="Example Image">
   </div>
 </details>
+
+
 
 
 
@@ -94,7 +98,7 @@
 <details>
   <summary> Layout Design </summary>
   <div markdown="1">
-    <img src="https://github.com/user-attachments/assets/1442a110-9db9-4ee2-8925-b1d6e086657b" style="width:1012; height:600px;" alt="Example Image">
+    <img src="https://github.com/user-attachments/assets/910d9a7a-7013-4c98-97e2-45e068e6bcd8" style="width:1012; height:600px;" alt="Example Image">
   </div>
 </details>  
 
@@ -269,7 +273,7 @@
 <details>
   <summary> Layout Design </summary>
   <div markdown="1">
-    <img src="https://github.com/user-attachments/assets/be5311d0-7a6a-4e8f-a30a-8aea5a01be07" style="width:1012; height:384px;" alt="Example Image">
+    <img src="https://github.com/user-attachments/assets/fb66463f-0518-4585-9159-7fa1b572e066" style="width:1012; height:384px;" alt="Example Image">
   </div>
 </details>  
 
@@ -385,7 +389,7 @@
 <details>
   <summary> Layout Design </summary>
   <div markdown="1">
-   <img src="https://github.com/user-attachments/assets/fd82637f-e8e8-4f5c-8f04-9c72d27b8a26" style="width:1012; height:310px;" alt="Example Image">
+   <img src="https://github.com/user-attachments/assets/9f26266c-bb7d-4462-ade9-46ef0c6d584a" style="width:1012; height:310px;" alt="Example Image">
   </div>
 </details>  
 
