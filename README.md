@@ -88,7 +88,7 @@
 
 
 ## 👨🏻‍🏫 성과
-### < Main Book Page 구현 >   
+### `<Main Book Page 구현>`   
 <h3> 1) category book area </h3>      
 
 <details>
@@ -263,7 +263,7 @@
 
 <br>
 
-### < Detail Book Page 구현 >   
+### `<Detail Book Page 구현>`   
 <h3> 1) detail book area </h3>      
 
 <details>
@@ -508,7 +508,7 @@
 
 
 
-### < 프로젝트 관리 >   
+### `<프로젝트 관리>`   
 <span></span>1)&nbsp; 스크럼 마스터로서 일자별 스크럼을 통한 프로젝트 진행상황과 이슈 관리 (wiki 링크) <br>
 <span></span>2)&nbsp; Notion, Github 사용법 정리 후 공유  <br>
 <span></span>3)&nbsp; HTML/CSS/Javascript 코드 컨벤션 규칙 정리 후 공유  <br>
