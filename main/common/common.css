@@ -9,6 +9,7 @@
 }
 
 body {
+  min-width: 320px;
   font-size: 18px;
   color: #111111;
   font-family: "Spoqa Han Sans Neo", "sans-serif" !important;

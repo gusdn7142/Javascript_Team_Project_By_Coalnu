@@ -76,24 +76,14 @@
 }
 
 .categorys-btn:hover {
-  background-color: #111111 !important;
-  color: white !important;
+  background-color: #111111;
+  color: white;
 }
 
 .categorys-btn-active {
-  background-color: #111111 !important;
-  color: white !important;
+  background-color: #111111;
+  color: white;
 }
-
-/* .categorys-btn:focus{
-    background-color: #111111 !important;
-    color: white !important;
-} */
-
-/* .categorys-btn-dark:hover {
-    background-color: #000;
-}
- */
 
 /*
 *  additional-text  부분
@@ -174,24 +164,7 @@
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-@media screen and (max-width: 767px) {
-  .main-container {
-    margin-top: 40px;
-  }
-
-  .main-carousel-container {
-    /* width: 600px; */
-    margin: auto;
-  }
-
-  .main-top-carousel-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    bottom: 50px;
-    left: 156px;
-  }
-
+@media screen and (max-width: 1024px) {
   .categorys-btn {
     display: none;
   }
@@ -214,7 +187,21 @@
   }
 }
 
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 768px) {
+  .categorys-btn {
+    display: none;
+  }
+  .nav-item {
+    display: contents;
+  }
+
+  .categorys-title {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 600px) {
   /* .carousel-item img {
     width: 256px;
     margin: 0 auto;

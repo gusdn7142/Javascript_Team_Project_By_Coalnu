@@ -116,14 +116,11 @@
     justify-content: center;
   }
 
-  .main-top-inputArea input {
-    font-size: 16px;
-  }
-
   .searching-icon {
     position: relative;
     right: 50px;
     top: 20px;
+    width: 0;
   }
 
   .main-top-title {
@@ -137,6 +134,18 @@
 }
 
 @media (max-width: 600px) {
+  .main-top-title {
+    margin-top: 40px;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .main-mid-bookList {
+    padding: 0px 40px;
+  }
+
   .hidden-phone {
     display: none;
   }
