@@ -177,7 +177,7 @@ const getBookListByAuthor = async () => {
         bootAuthor = bootShowAuthor.slice(0, 10) + "...";
       }
 
-      return `<div class="book-author-content-image-and-text  custom-mg-left-48 custom-mg-right-48" >                           
+      return `<div class="book-author-content-image-and-text" >                           
 
                         <div class="book-author-content-image  custom-mg-bottom-8" >     
                             <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" >  
