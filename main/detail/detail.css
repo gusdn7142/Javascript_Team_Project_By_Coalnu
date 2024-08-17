@@ -4,27 +4,19 @@
 .book-detail {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* border: 5px solid greenyellow;  */
-  /* width:1040px;  */
-}
-
-.book-detail aside {
-  max-width: 356px;
-  max-height: 520px;
-  /* border: 3px solid red; */
-  margin-right: 205px;
+  gap: 200px;
 }
 
 .book-detail aside img {
-  /* border: 3px solid blue; */
-  border-color: #e0e0e0;
-  /* width: 356px;
-  height: 520px; */
+  /* border: 3px solid red; */
+  max-width: 356px;
+  max-height: 520px;
 }
 
 .book-detail section {
-  max-width: 476px;
-  max-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* border: 3px solid red; */
 }
 
@@ -38,7 +30,6 @@
 */
 .book-author {
   /* border: 5px solid greenyellow;  */
-  /* width: 1300px; */
   margin: 130px auto 0 auto;
 }
 
@@ -47,7 +38,6 @@
 */
 .book-author-content {
   /* border: 3px solid blue;  */
-  /* height: 320px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,17 +60,7 @@
 .book-author-content-image-and-text-List {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
-  /* height: 320px; */
-}
-
-.book-author-content-image-and-text {
-  /* border:1px solid sienna; */
-  /* width: 181px; */
-}
-
-.book-author-content-image {
-  max-width: 180px;
-  max-height: 266px;
+  gap: 32px;
 }
 
 .book-author-content-right-arrow {
@@ -117,21 +97,21 @@
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .book-detail {
     grid-template-columns: 1fr;
+    gap: 60px;
   }
 
   .book-detail aside {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
+    /* padding: 20px; */
   }
 
   .book-detail section {
     text-align: center;
-  }
-
-  .detail-nodata {
-    /* width: 300px; */
   }
 
   .book-author {
@@ -143,14 +123,5 @@
   .book-detail {
     /* width: 1040px; */
     margin: 0 auto;
-  }
-
-  .book-author-content-image {
-    min-width: 200px;
-    min-height: 360px;
-  }
-
-  .detail-nodata {
-    width: 400px;
   }
 }
