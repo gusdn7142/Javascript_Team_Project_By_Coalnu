@@ -33,10 +33,10 @@ let detailBookBtn = document.getElementById("detailBookBtn");
 let bookImageAndTextList = [];
 
 //1-6) 페이지네이션 초기값 셋팅
-let leftArrow = document.getElementById("book-author-content-left-arrow");
-let rightArrow = document.getElementById("book-author-content-right-arrow");
+// let leftArrow = document.getElementById("book-author-content-left-arrow");
+// let rightArrow = document.getElementById("book-author-content-right-arrow");
 let pageNum = 1;
-let pageSize = 4;
+let pageSize = 6;
 
 //1-7) 기타 요소 선언
 let searchIconButton = ""; //검색 돋보기 아이콘 버튼 태그
@@ -45,16 +45,16 @@ let searchIconButton = ""; //검색 돋보기 아이콘 버튼 태그
  * 2. Event 선언
  */
 //2-1) 왼쪽 화살표 클릭 이벤트
-leftArrow.onclick = async () => {
-  pageNum--;
-  await getBookListByAuthor();
-};
+// leftArrow.onclick = async () => {
+//   pageNum--;
+//   await getBookListByAuthor();
+// };
 
 //2-2) 오른쪽 화살표 클릭 이벤트
-rightArrow.onclick = async () => {
-  pageNum++;
-  await getBookListByAuthor();
-};
+// rightArrow.onclick = async () => {
+//   pageNum++;
+//   await getBookListByAuthor();
+// };
 
 //2-3) 검색 Button Click Event
 document.addEventListener("DOMContentLoaded", function () {
@@ -147,7 +147,6 @@ const getBookListByAuthor = async () => {
   if (bookDataList.total === 0) {
     alert("검색된 데이터가 없습니다.");
     return;
-    //throw new Error("검색된 기사가 없습니다.");
   }
 
   //4-3) response 값을 json 타입으로 변환
@@ -155,47 +154,45 @@ const getBookListByAuthor = async () => {
 
   //4-4) View 렌더링
   const imageAndTextHTML = bookImageAndTextList
-    .map((bootImageAndText) => {
-      let bootTitle = "";
-      let bootAuthor = "";
-      let bootShowTitle = "";
-      let bootShowAuthor = "";
+    .map((bookImageAndText) => {
+      let bookTitle = "";
+      let bookAuthor = "";
+      let bookShowTitle = "";
+      let bookShowAuthor = "";
 
-      if (bootImageAndText.titleInfo == "") {
-        bootTitle = "제목없음";
+      if (bookImageAndText.titleInfo == "") {
+        bookTitle = "제목없음";
       } else {
-        bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
-        //console.log("bootShowTitle:"+bootShowTitle)
-        bootTitle = bootShowTitle.slice(0, 10) + "...";
-        //console.log("bootTitle : "+ bootTitle)
+        bookShowTitle = stripHTMLTags(bookImageAndText.titleInfo);
+        //console.log("bookShowTitle:"+bookShowTitle)
+        bookTitle = bookShowTitle.slice(0, 10) + "...";
+        //console.log("bookTitle : "+ bookTitle)
       }
 
-      if (bootImageAndText.authorInfo == "") {
-        bootAuthor = "작자미상";
+      if (bookImageAndText.authorInfo == "") {
+        bookAuthor = "작자미상";
       } else {
-        bootShowAuthor = stripHTMLTags(bootImageAndText.authorInfo);
-        bootAuthor = bootShowAuthor.slice(0, 10) + "...";
+        bookShowAuthor = stripHTMLTags(bookImageAndText.authorInfo);
+        bookAuthor = bookShowAuthor.slice(0, 10) + "...";
       }
 
-      return `<div class="book-author-content-image-and-text" >                           
+      return `<li class="book-author-content-image-and-text" >                           
+                  <div class="book-author-content-image  custom-mg-bottom-8" >     
+                      <a href="../detail/detail.html?titleKeyword=${bookShowTitle}&authorKeyword=${bookShowAuthor}" >  
+                        <img src="${
+                          bookDetailImageDomain + bookImageAndText.imageUrl
+                        }" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
+                      </a>
+                  </div>
 
-                        <div class="book-author-content-image  custom-mg-bottom-8" >     
-                            <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" >  
-                              <img src="${
-                                bookDetailImageDomain +
-                                bootImageAndText.imageUrl
-                              }" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
-                            </a>
-                        </div>
-
-                        <div class="book-author-content-firstLine custom-fs-16"  >
-                            <span class="bold-text"title="${bootShowTitle}" >${bootTitle}</span>
-                        </div>
-                        
-                        <div class="book-author-content-secondLine custom-fs-14 custom-text-darkGrey" >
-                            <span title="${bootShowAuthor}">${bootAuthor}</span>
-                        </div>
-                    </div>`;
+                  <div class="book-author-content-firstLine custom-fs-16"  >
+                      <span class="bold-text"title="${bookShowTitle}" >${bookTitle}</span>
+                  </div>
+                  
+                  <div class="book-author-content-secondLine custom-fs-14 custom-text-darkGrey" >
+                      <span title="${bookShowAuthor}">${bookAuthor}</span>
+                  </div>
+              </li>`;
     })
     .join("");
 

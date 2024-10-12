@@ -23,9 +23,8 @@
 
   <body>
     <div id="nav"></div>
-    <div class="mb-5"></div>
 
-    <main class="main-container">
+    <main class="main-container responsive-mg-top-40">
       <div class="book-detail">
         <aside>
           <img id="detailBookImage" src="../common/image/book-null-image.jpg" />
@@ -34,26 +33,32 @@
         <section>
           <div
             id="detailBookTitle"
-            class="detail-nodata custom-fs-40 custom-mg-bottom-32 bold-text"
+            class="detail-nodata custom-fs-40 custom-mg-bottom-24 bold-text responsive-fs-28"
           >
             검색된 데이터가 없습니다.
           </div>
           <div
             id="detailBookAuthor"
-            class="custom-fs-24 custom-text-darkGrey bold-text"
+            class="custom-fs-24 custom-text-darkGrey bold-text custom-mg-bottom-60 responsive-fs-20 responsive-mg-bottom-20"
           ></div>
 
-          <div class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-24">
+          <div
+            class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-24 responsive-mg-bottom-16 responsive-fs-16"
+          >
             <span class="bold-text"> 카테고리: </span>
             <span id="detailBookCategory"></span>
           </div>
 
-          <div class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-24">
+          <div
+            class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-24 responsive-mg-bottom-16 responsive-fs-16"
+          >
             <span class="bold-text"> 비치일: </span>
             <span id="detailBookRegYMD"></span>
           </div>
 
-          <div class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-32">
+          <div
+            class="custom-fs-20 custom-text-darkGrey custom-mg-bottom-60 responsive-fs-16 responsive-mg-bottom-28"
+          >
             <span class="bold-text"> 자료 보관 장소: </span>
             <span id="detailBookPlace"></span>
           </div>
@@ -76,38 +81,28 @@
 
       <div class="book-author">
         <section class="book-author-title custom-mg-bottom-24">
-          <div class="custom-fs-24">
-            <span class="bold-text"> 관련 작가 도서</span>
-          </div>
-          <div class="custom-fs-20">
-            <span> 동일한 작가의 다른 도서를 만나보세요 </span>
+          <div>
+            <div class="custom-fs-24 bold-text responsive-fs-20">
+              관련 작가 도서
+            </div>
+            <div class="custom-fs-20 responsive-fs-16">
+              동일한 작가의 다른 도서를 만나보세요
+            </div>
           </div>
         </section>
 
         <section class="book-author-content">
-          <!-- Pagination Start -->
-          <div
-            id="book-author-content-left-arrow"
-            class="book-author-content-left-arrow custom-mg-right-24"
-          >
-            <img src="image/Vector-left.png" />
-          </div>
           <!-- ImageText Box List 부분 -->
-          <div
+          <ul
             id="book-ImageAndText-List-By-Author"
             class="book-author-content-image-and-text-List"
-          >
-            <!--   width: 892px; gap: 56px; -->
-          </div>
-          <!-- Pagination End -->
-          <div
-            id="book-author-content-right-arrow"
-            class="book-author-content-right-arrow custom-mg-left-24"
-          >
-            <img
-              src="image/Vector-right.png"
-              style="width: 11px; height: 23px; border: none"
-            />
+          ></ul>
+
+          <div class="see-more custom-fs-16">
+            <a href="#">
+              <span>더보기&nbsp&nbsp&nbsp</span>
+              <img src="image/Vector-right.png" />
+            </a>
           </div>
         </section>
       </div>

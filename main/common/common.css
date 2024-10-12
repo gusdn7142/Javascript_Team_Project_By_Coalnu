@@ -25,6 +25,8 @@ ul,
 li,
 ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -228,6 +230,10 @@ a {
     margin: auto;
   } */
 
+  .responsive-fs-28 {
+    font-size: 28px;
+  }
+
   .responsive-fs-20 {
     font-size: 20px;
   }
@@ -240,6 +246,14 @@ a {
     font-size: 14px;
   }
 
+  .responsive-mg-bottom-28 {
+    margin-bottom: 32px;
+  }
+
+  .responsive-mg-bottom-20 {
+    margin-bottom: 20px;
+  }
+
   .responsive-mg-bottom-16 {
     margin-bottom: 16px;
   }
@@ -250,7 +264,10 @@ a {
     /* max-width: 360px; */
   /* margin: auto;
   } */
-  */ .responsive-mg-top-12 {
+  .responsive-mg-top-40 {
+    margin-top: 40px;
+  }
+  .responsive-mg-top-12 {
     margin-top: 12px;
   }
 
