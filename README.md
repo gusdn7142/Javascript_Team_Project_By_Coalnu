@@ -179,14 +179,12 @@
             let bootAuthor = '';
             let bootShowTitle = '';
             let bootShowAuthor = '';
-
             if(bootImageAndText.titleInfo == ''){
                 bootTitle = '제목 없음'
             } else {
                 bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
                 bootTitle = bootShowTitle.slice(0, 10) + '...';
             }
-
             if(bootImageAndText.authorInfo == ''){
                 bootAuthor = '작자미상';
             } else {

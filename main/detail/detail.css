@@ -44,10 +44,6 @@
   justify-content: space-between;
 }
 
-/* .book-author-content {
-  margin: 0 200px;
-} */
-
 .book-author-content-image-and-text-List {
   display: grid;
   grid-template-columns: repeat(6, minmax(200px, 290px));
