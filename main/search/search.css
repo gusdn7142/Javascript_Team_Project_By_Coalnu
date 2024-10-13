@@ -21,10 +21,9 @@
 }
 
 .main-mid-bookList {
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); 
-  gap: 48px; 
-  max-width: 1140px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+  gap: 48px;
   margin: 32px auto;
 }
 
@@ -50,27 +49,21 @@
 }
 
 .main-bottom-pagination-link.active .main-bottom-pagination-num {
-  background-color: #8B0000;
-  color: #FFFFFF;
+  background-color: #8b0000;
+  color: #ffffff;
 }
 
 .main-bottom-pagination-num {
-  background-color: #F6E7E0;
+  background-color: #f6e7e0;
   width: 42px;
   height: 42px;
   border-radius: 10px;
 }
 
 .main-bottom-pagination-num:hover {
-  background-color: #8B0000;
-  color: #FFFFFF;
+  background-color: #8b0000;
+  color: #ffffff;
 }
-
-img {
-  width: 180px;
-  height: 266px;
-}
-
 
 /*
 * animation
@@ -91,10 +84,8 @@ img {
 }
 
 .book-ImageAndText-one:hover {
-    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
-
 
 @media screen and (max-width: 1023px) {
   .main-bottom-pagination-num {
@@ -113,30 +104,23 @@ img {
   .main-top-inputArea input {
     width: 420px;
   }
-
-
 }
 
-
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .main-top-inputArea input {
     width: 260px;
   }
 
-  .main-top-inputArea{
+  .main-top-inputArea {
     display: flex;
     justify-content: center;
-
-  }
-
-  .main-top-inputArea input {
-    font-size: 16px;
   }
 
   .searching-icon {
     position: relative;
     right: 50px;
     top: 20px;
+    width: 0;
   }
 
   .main-top-title {
@@ -147,18 +131,22 @@ img {
   .totalBooks-message {
     text-align: center;
   }
-
 }
 
+@media (max-width: 600px) {
+  .main-top-title {
+    margin-top: 40px;
+  }
 
-@media (max-width: 600px){
+  ul {
+    padding: 0;
+  }
+
+  .main-mid-bookList {
+    padding: 0px 40px;
+  }
+
   .hidden-phone {
     display: none;
   }
-
-
-
-  
-
-
 }

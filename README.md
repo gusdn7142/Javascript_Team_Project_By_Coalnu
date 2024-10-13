@@ -1,8 +1,9 @@
-
 ## 📝 프로젝트 개요
+
 > 국립중앙도서관의 도서 정보를 제공해주고 도서 대여를 연결해주는 웹 서비스입니다.
+
 - 목표 : [국립중앙도서관 Open API](https://www.nl.go.kr/NL/contents/N31101030400.do)를 활용해 사용자에게 도서 정보를 간편하게 제공해주는 것을 목표로 하였습니다.
-- 기간 : 2024년 7월 14일 ~ 2024년 7월 21일 
+- 기간 : 2024년 7월 14일 ~ 2024년 7월 21일
 - 팀 구성 : 프론트 4명 (12조)
   <table>
      <tr>
@@ -26,28 +27,25 @@
   </table>
 - 역할 : Scrum Master & Frontend Developer
 
-
-
-
 </br>
 
-## 💁‍♂️ Wiki 
-- ✍ [프로젝트 기획 및 디자인 (With Figma)](링크추가예정)   //보류
-- 📰 [스크럼 관리](링크추가예정)   //보류
+## 💁‍♂️ Wiki
+
+- ✍ [프로젝트 기획 및 디자인 (With Figma)](링크추가예정) //보류
+- 📰 [스크럼 관리](링크추가예정) //보류
 - 📂 [디렉터리 구조](https://github.com/gusdn7142/Javascript_Team_Project_By_Coalnu/wiki/%F0%9F%93%81-Directory-Structure)
 
 <br>
 
-
-
 ## 🛠 사용 기술
-  <img src="https://github.com/user-attachments/assets/5d82f8ff-eadf-4579-b1e4-ae4a1b421d2b" style="width:500px; height:300px;" alt="Example Image">
 
+  <img src="https://github.com/user-attachments/assets/5d82f8ff-eadf-4579-b1e4-ae4a1b421d2b" style="width:500px; height:300px;" alt="Example Image">
 
 <br>
 <br>
 
 ## 🖥️ 전체화면 구성
+
 <details>
   <summary> 1. Book 메인 카테고리 페이지 </summary>
   <div markdown="1">
@@ -55,9 +53,6 @@
     <img src="https://github.com/user-attachments/assets/4ed2491c-e94c-4bae-93f8-47d58a157cc4" style="width:1012px; height:1060px;" alt="Example Image">
   </div>
 </details>
-
-
-
 
 <details>
   <summary> 2. Book 검색 페이지 </summary>
@@ -67,9 +62,6 @@
   </div>
 </details>
 
-
-
-
 <details>
   <summary> 3. Book 상세 페이지 </summary>
   <div markdown="1">
@@ -78,31 +70,21 @@
   </div>
 </details>
 
-
-
-
-
-
 </br>
 </br>
-
-
-
-
-
 
 ## 👨🏻‍🏫 성과
-### `<Main Book Page 구현>`   
-<h3> 1) category book area </h3>      
+
+### `<Main Book Page 구현>`
+
+<h3> 1) category book area </h3>
 
 <details>
   <summary> Layout Design </summary>
   <div markdown="1">
     <img src="https://github.com/user-attachments/assets/910d9a7a-7013-4c98-97e2-45e068e6bcd8" style="width:1012; height:600px;" alt="Example Image">
   </div>
-</details>  
-
-
+</details>
 
 <details>
   <summary> Class Naming </summary>
@@ -124,7 +106,7 @@
           <div class="see-more">
    ```
   </div>
-</details>  
+</details>
 
 <!--    - `<div class="main-container">`
       - `<div class="categorys>`
@@ -140,7 +122,6 @@
           - `<div class="book-text-secondLine>`
       - `<div class="see-more">`  -->
 
-    
 <details>
   <summary> Main JavaScript logic - '카테고리'를 통한 도서 목록 조회 </summary>
   <div markdown="1">
@@ -150,34 +131,34 @@
 
           //5-1) 카테고리명 조회 및 셋팅
           const categoryName = event.target.textContent;
-          if(categoryName === '전체') {          
+          if(categoryName === '전체') {
               url = new URL(`
-                  https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}       
-              `);    
-          } else {                            
+                  https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}
+              `);
+          } else {
               url = new URL(`
-                  https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&v1=${categoryName}&f1=keyword&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}       
-              `);      
-          }           
+                  https://www.nl.go.kr/NL/search/openApi/search.do?key=${apiKey}&apiType=json&detailSearch=true&v1=${categoryName}&f1=keyword&pageNum=${pageNum}&pageSize=${pageSize}&category=${currentNavTagName}
+              `);
+          }
 
           //5-2) 해당 카테고리 버튼에 active/Inactive CSS 속성 지정
-          const categoryActiveElements = document.querySelectorAll('.categorys-btn.categorys-btn-active');  
+          const categoryActiveElements = document.querySelectorAll('.categorys-btn.categorys-btn-active');
           categoryActiveElements.forEach((element) => {
             element.classList.remove('categorys-btn-active');
-          });  
-          event.target.classList.add('categorys-btn-active');         
-              
+          });
+          event.target.classList.add('categorys-btn-active');
+
           try {
-              //5-3) '카테고리'로 검색 API 호출    
+              //5-3) '카테고리'로 검색 API 호출
               const response = await fetch(url);
-      
+
               //5-4) API 응답이 OK이면
-              if(response.status == 200){  
-      
+              if(response.status == 200){
+
                   //5-4-1) response 값을 json 타입으로 변환
                   bookDataList = await response.json();
                   console.log("bookDataList :", bookDataList);
-                  bootImageAndTextList = bookDataList.result;    
+                  bootImageAndTextList = bookDataList.result;
                   console.log("bootImageAndTextList :", bootImageAndTextList);
               }
               else{
@@ -189,23 +170,21 @@
 
           //5-5) View 렌더링
           bookTotalCount.textContent = bookDataList.total.toLocaleString() + "개";  //도서 총 개수 셋팅
-        
-          
+
+
           const imageAndTextHTML = bootImageAndTextList.map(    //도서 목록 표시
             (bootImageAndText) => {
-            
+
             let bootTitle = '';
             let bootAuthor = '';
             let bootShowTitle = '';
             let bootShowAuthor = '';
-            
             if(bootImageAndText.titleInfo == ''){
                 bootTitle = '제목 없음'
             } else {
                 bootShowTitle = stripHTMLTags(bootImageAndText.titleInfo);
                 bootTitle = bootShowTitle.slice(0, 10) + '...';
             }
-        
             if(bootImageAndText.authorInfo == ''){
                 bootAuthor = '작자미상';
             } else {
@@ -214,85 +193,83 @@
                 bootAuthor = bootShowAuthor.slice(0, 10) + '...';
                 // console.log("bootAuthor : "+ bootAuthor)
             }
-        
-            
-            return `<div  class="book-ImageAndText-one" >                           
-                    <div class="book-image  custom-mg-bottom-8" >      
-                        <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" >    
+
+
+            return `<div  class="book-ImageAndText-one" >
+                    <div class="book-image  custom-mg-bottom-8" >
+                        <a href="../detail/detail.html?titleKeyword=${bootShowTitle}&authorKeyword=${bootShowAuthor}" >
                             <img src="${bootDetailImageDomain + bootImageAndText.imageUrl}" onerror="this.onerror=null; this.src='../common/image/book-null-image.jpg';">
                         </a>
                     </div>
-        
+
                     <div class="book-text-firstLine custom-fs-20"  >
                         <span class="bold-text" title="${bootShowTitle}" >${bootTitle}</span>
                     </div>
-                            
+
                     <div class="book-text-secondLine custom-fs-16 custom-text-darkGrey" >
                         <span title="${bootShowAuthor}">${bootAuthor}</span>
                     </div>
                 </div>
-              `                
-            }).join('');   
-        
-        
+              `
+            }).join('');
+
+
             document.getElementById("book-ImageAndText-List").innerHTML = imageAndTextHTML;
-        }      
+        }
 
-  ```
-  </div>
-</details>   
-
-
-<details>
-  <summary> Media Query Apply </summary>
-  <div markdown="1">
-    
-  ```
-
-   ```
-  </div>
-</details> 
+```
+</div>
+</details>
 
 
 <details>
-  <summary> Issue </summary>
-  <div markdown="1">
-    
-  ```
+<summary> Media Query Apply </summary>
+<div markdown="1">
 
-   ```
-  </div>
-</details> 
+```
+
+```
+</div>
+</details>
+
+
+<details>
+<summary> Issue </summary>
+<div markdown="1">
+
+```
+
+````
+</div>
+</details>
 
 
 <br>
 
-### `<Detail Book Page 구현>`   
-<h3> 1) detail book area </h3>      
+### `<Detail Book Page 구현>`
+<h3> 1) detail book area </h3>
 
 <details>
-  <summary> Layout Design </summary>
-  <div markdown="1">
-    <img src="https://github.com/user-attachments/assets/fb66463f-0518-4585-9159-7fa1b572e066" style="width:1012; height:384px;" alt="Example Image">
-  </div>
-</details>  
+<summary> Layout Design </summary>
+<div markdown="1">
+ <img src="https://github.com/user-attachments/assets/fb66463f-0518-4585-9159-7fa1b572e066" style="width:1012; height:384px;" alt="Example Image">
+</div>
+</details>
 
 
-    
+
 <details>
-  <summary> Class Naming </summary>
-  <div markdown="1">
-    
-  ```html  
-      <div class="book-detail">
-          <div class="aside>
-          <div class="section>
-   ```
+<summary> Class Naming </summary>
+<div markdown="1">
+
+```html
+   <div class="book-detail">
+       <div class="aside>
+       <div class="section>
+````
+
   </div>
-</details>  
-
-
-
+</details>
 
 <details>
   <summary> Main JavaScript logic - ‘저자 and 제목’ 조건 검색 - 단일 도서 조회 </summary>
@@ -353,65 +330,62 @@
             }
         }
 
-  ```
-  </div>
-</details>   
+```
+</div>
+</details>
 
 
 <details>
-  <summary> Media Query Apply </summary>
-  <div markdown="1">
-    
-  ```
+<summary> Media Query Apply </summary>
+<div markdown="1">
 
-   ```
-  </div>
-</details> 
+```
+
+```
+</div>
+</details>
 
 
 <details>
-  <summary> Issue </summary>
-  <div markdown="1">
-    
-  ```
+<summary> Issue </summary>
+<div markdown="1">
 
-   ```
-  </div>
-</details> 
+```
+
+````
+</div>
+</details>
 
 
 
 <br>
 
 
-<h3> 2) author book area </h3>      
+<h3> 2) author book area </h3>
 
 <details>
-  <summary> Layout Design </summary>
-  <div markdown="1">
-   <img src="https://github.com/user-attachments/assets/9f26266c-bb7d-4462-ade9-46ef0c6d584a" style="width:1012; height:310px;" alt="Example Image">
-  </div>
-</details>  
+<summary> Layout Design </summary>
+<div markdown="1">
+<img src="https://github.com/user-attachments/assets/9f26266c-bb7d-4462-ade9-46ef0c6d584a" style="width:1012; height:310px;" alt="Example Image">
+</div>
+</details>
 
-    
+
 <details>
-  <summary> Class Naming </summary>
-  <div markdown="1">
-    
-  ```html  
-     <div class="book-author">
-          <div class="book-author-title >
-          <div class="book-author-content>
-              <div class="book-author-content-left-arrow>
-              <div class="book-ImageAndText-List-By-Author>
-              <div class="book-author-content-right-arrow>
-   ```
+<summary> Class Naming </summary>
+<div markdown="1">
+
+```html
+  <div class="book-author">
+       <div class="book-author-title >
+       <div class="book-author-content>
+           <div class="book-author-content-left-arrow>
+           <div class="book-ImageAndText-List-By-Author>
+           <div class="book-author-content-right-arrow>
+````
+
   </div>
-</details>  
-
-
-
-
+</details>
 
 <details>
   <summary> Main JavaScript logic - ‘저자’ 조건 검색 - 도서 List 조회 </summary>
@@ -480,31 +454,31 @@
             document.getElementById("book-ImageAndText-List-By-Author").innerHTML = imageAndTextHTML;
         }
 
-  ```
-  </div>
-</details>   
+```
+</div>
+</details>
 
 
 <details>
-  <summary> Media Query Apply </summary>
-  <div markdown="1">
-    
-  ```
+<summary> Media Query Apply </summary>
+<div markdown="1">
 
-   ```
-  </div>
-</details> 
+```
+
+```
+</div>
+</details>
 
 
 <details>
-  <summary> Issue </summary>
-  <div markdown="1">
-    
-  ```
+<summary> Issue </summary>
+<div markdown="1">
 
-   ```
-  </div>
-</details> 
+```
+
+```
+</div>
+</details>
 
 
 
@@ -512,7 +486,7 @@
 
 
 
-### `<프로젝트 관리>`   
+### `<프로젝트 관리>`
 <span></span>1)&nbsp; 스크럼 마스터로서 일자별 스크럼을 통한 프로젝트 진행상황과 이슈 관리 (wiki 링크) <br>
 <span></span>2)&nbsp; Notion, Github 사용법 정리 후 공유  <br>
 <span></span>3)&nbsp; HTML/CSS/Javascript 코드 컨벤션 규칙 정리 후 공유  <br>
@@ -528,8 +502,11 @@
 ## 💡 코드 실행시 주의사항
 
 ### 도메인 접속 주소
-  ```
-  https://munheon-garden.netlify.app/home/home.html
-  ```
+```
+
+https://munheon-garden.netlify.app/home/home.html
+
+```
 
 
+```
